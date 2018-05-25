@@ -15,18 +15,18 @@
 
 
 
-<meta name="description" content="之前有接触过用C#搭界面，这是第一次接触matlab的界面搭建。为了效率高一点，直接找了一个实例，踏踏实实的从头到尾的实践了一遍，最后完成了自己所需要的界面搭建。一个实例搞定MATLAB界面编程 总结一下学习到的东西与经验：  不同的构件的tag很重要！tag的命名一定要有逻辑且清晰，要说明组件的结构与组件。 同一界面不同组件之间的参数传递  （1）使用globe定义全局变量 function b">
+<meta name="description" content="之前有接触过用C#搭界面，这是第一次接触matlab的界面搭建。为了效率高一点，直接找了一个实例，踏踏实实的从头到尾的实践了一遍，最后完成了自己所需要的界面搭建。一个实例搞定MATLAB界面编程 总结一下学习到的东西与经验：  不同的构件的tag很重要！tag的命名一定要有逻辑且清晰，要说明组件的结构与组件。 同一界面不同组件之间的参数传递">
 <meta name="keywords" content="matlab,gui">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MATLAB之GUI界面搭建学习">
 <meta property="og:url" content="http://yoursite.com/2018/05/22/MATLAB之GUI界面搭建学习/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="之前有接触过用C#搭界面，这是第一次接触matlab的界面搭建。为了效率高一点，直接找了一个实例，踏踏实实的从头到尾的实践了一遍，最后完成了自己所需要的界面搭建。一个实例搞定MATLAB界面编程 总结一下学习到的东西与经验：  不同的构件的tag很重要！tag的命名一定要有逻辑且清晰，要说明组件的结构与组件。 同一界面不同组件之间的参数传递  （1）使用globe定义全局变量 function b">
+<meta property="og:description" content="之前有接触过用C#搭界面，这是第一次接触matlab的界面搭建。为了效率高一点，直接找了一个实例，踏踏实实的从头到尾的实践了一遍，最后完成了自己所需要的界面搭建。一个实例搞定MATLAB界面编程 总结一下学习到的东西与经验：  不同的构件的tag很重要！tag的命名一定要有逻辑且清晰，要说明组件的结构与组件。 同一界面不同组件之间的参数传递">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-22T14:36:44.763Z">
+<meta property="og:updated_time" content="2018-05-24T03:04:06.200Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MATLAB之GUI界面搭建学习">
-<meta name="twitter:description" content="之前有接触过用C#搭界面，这是第一次接触matlab的界面搭建。为了效率高一点，直接找了一个实例，踏踏实实的从头到尾的实践了一遍，最后完成了自己所需要的界面搭建。一个实例搞定MATLAB界面编程 总结一下学习到的东西与经验：  不同的构件的tag很重要！tag的命名一定要有逻辑且清晰，要说明组件的结构与组件。 同一界面不同组件之间的参数传递  （1）使用globe定义全局变量 function b">
+<meta name="twitter:description" content="之前有接触过用C#搭界面，这是第一次接触matlab的界面搭建。为了效率高一点，直接找了一个实例，踏踏实实的从头到尾的实践了一遍，最后完成了自己所需要的界面搭建。一个实例搞定MATLAB界面编程 总结一下学习到的东西与经验：  不同的构件的tag很重要！tag的命名一定要有逻辑且清晰，要说明组件的结构与组件。 同一界面不同组件之间的参数传递">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -306,14 +306,13 @@
 <p>总结一下学习到的东西与经验：</p>
 <ol>
 <li>不同的构件的tag很重要！tag的命名一定要有逻辑且清晰，要说明组件的结构与组件。</li>
-<li>同一界面不同组件之间的参数传递</li>
-</ol>
+<li><p>同一界面不同组件之间的参数传递</p>
+<a id="more"></a>
 <p>（1）使用globe定义全局变量</p>
-<pre><code>function btn1_callback(hObject,userdata,handles)
-global var1  %对var1的处理
-function btn2_callback(hObject,userdata,handles)
-global var1  %对var1的引用
-</code></pre><p>（2）使用guidata函数</p>
+<p> function btn1_callback(hObject,userdata,handles)<br> global var1  %对var1的处理<br> function btn2_callback(hObject,userdata,handles)<br> global var1  %对var1的引用</p>
+</li>
+</ol>
+<p>（2）使用guidata函数</p>
 <pre><code>handles.X=str2double(get(hObject,&apos;String&apos;));
 guidata(hObject,handles);
 在别的函数中只要使用handles.X就可以得到str2double(get(hObject,&apos;String&apos;))数值。
@@ -338,7 +337,7 @@ a=get(handles.X,&apos;userdata&apos;);
         <p><span>本文标题:</span><a href="/2018/05/22/MATLAB之GUI界面搭建学习/">MATLAB之GUI界面搭建学习</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Virya-Hh</a></p>
         <p><span>发布时间:</span>2018-05-22, 17:16:56</p>
-        <p><span>最后更新:</span>2018-05-22, 22:36:44</p>
+        <p><span>最后更新:</span>2018-05-24, 11:04:06</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2018/05/22/MATLAB之GUI界面搭建学习/" title="MATLAB之GUI界面搭建学习">http://yoursite.com/2018/05/22/MATLAB之GUI界面搭建学习/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2018/05/22/MATLAB之GUI界面搭建学习/　　作者: Virya-Hh" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -466,7 +465,7 @@ a=get(handles.X,&apos;userdata&apos;);
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/05/23/2018-05-23-hexo主题配置/">2018/05/23 -- hexo主题配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/22/MATLAB之GUI界面搭建学习/">MATLAB之GUI界面搭建学习</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/22/github-hexo-个人博客搭建教程（一）（含填坑）/">github+hexo 个人博客搭建教程（一）（含填坑）</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/05/24/2018-05-24-软件测试了解及数据结构练习/">2018-05-24-软件测试了解及数据结构练习</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/23/2018-05-23-hexo主题配置/">2018/05/23 -- hexo主题配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/22/MATLAB之GUI界面搭建学习/">MATLAB之GUI界面搭建学习</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/22/github-hexo-个人博客搭建教程（一）（含填坑）/">github+hexo 个人博客搭建教程（一）（含填坑）</a></li></ul>
 
 
 

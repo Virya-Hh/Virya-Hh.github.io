@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="Virya-Hh" />
+
+
+
+<meta name="description" content="软件测试工程师在线题库及考试试题 腾讯测试工程师笔试 黑白盒测试的概念性问题黑盒测试 也称功能测试或者数据驱动测试或规格说明的测试，是从用户观点出发的测试。不考虑内部结构，只知道输入与输出之间的关系或者程序功能需求的情况下，来确定测试用例和推断测试结果的正确性和可操作性。黑盒测试方法主要有等价类划分法、边界值分析法、因果图法、错误推测法、综合策略、正交分析法，用于软件的确认测试。白盒测试也称逻辑驱">
+<meta name="keywords" content="学习心得">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2018-05-24-软件测试了解及数据结构练习">
+<meta property="og:url" content="http://yoursite.com/2018/05/24/2018-05-24-软件测试了解及数据结构练习/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="软件测试工程师在线题库及考试试题 腾讯测试工程师笔试 黑白盒测试的概念性问题黑盒测试 也称功能测试或者数据驱动测试或规格说明的测试，是从用户观点出发的测试。不考虑内部结构，只知道输入与输出之间的关系或者程序功能需求的情况下，来确定测试用例和推断测试结果的正确性和可操作性。黑盒测试方法主要有等价类划分法、边界值分析法、因果图法、错误推测法、综合策略、正交分析法，用于软件的确认测试。白盒测试也称逻辑驱">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2018/05/24/2018-05-24-软件测试了解及数据结构练习/1.jpg">
+<meta property="og:updated_time" content="2018-05-24T13:35:45.090Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="2018-05-24-软件测试了解及数据结构练习">
+<meta name="twitter:description" content="软件测试工程师在线题库及考试试题 腾讯测试工程师笔试 黑白盒测试的概念性问题黑盒测试 也称功能测试或者数据驱动测试或规格说明的测试，是从用户观点出发的测试。不考虑内部结构，只知道输入与输出之间的关系或者程序功能需求的情况下，来确定测试用例和推断测试结果的正确性和可操作性。黑盒测试方法主要有等价类划分法、边界值分析法、因果图法、错误推测法、综合策略、正交分析法，用于软件的确认测试。白盒测试也称逻辑驱">
+<meta name="twitter:image" content="http://yoursite.com/2018/05/24/2018-05-24-软件测试了解及数据结构练习/1.jpg">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/favicon.png">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>2018-05-24-软件测试了解及数据结构练习 | Hexo</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: false
+    }
+</script>
+
+
+    <script> yiliaConfig.jquery_ui = [false]; </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/avatar.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">Virya-Hh</a></h1>
+        </hgroup>
+
+        
+
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/随笔">随笔</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:123@123.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" href="#" title="GitHub"></a>
+                            
+                                <a class="fa RSS" href="/atom.xml" title="RSS"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gui/">gui</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/matlab/">matlab</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习心得/">学习心得</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/环境配置/">环境配置</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">MOxFIVE</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">专注于前端</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">Virya-Hh</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/avatar.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">Virya-Hh</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/随笔">随笔</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:123@123.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="#" title="GitHub"></a>
+                            
+                                <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-2018-05-24-软件测试了解及数据结构练习" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/05/24/2018-05-24-软件测试了解及数据结构练习/" class="article-date">
+      <time datetime="2018-05-24T00:59:13.000Z" itemprop="datePublished">2018-05-24</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      2018-05-24-软件测试了解及数据结构练习
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习心得/">学习心得</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p><a href="https://www.ppkao.com/tiku/13340/" target="_blank" rel="noopener">软件测试工程师在线题库及考试试题</a></p>
+<h2 id="腾讯测试工程师笔试"><a href="#腾讯测试工程师笔试" class="headerlink" title="腾讯测试工程师笔试"></a>腾讯测试工程师笔试</h2><ol>
+<li><p>黑白盒测试的概念性问题<br><strong>黑盒测试</strong> 也称功能测试或者数据驱动测试或规格说明的测试，是从用户观点出发的测试。不考虑内部结构，只知道输入与输出之间的关系或者程序功能需求的情况下，来确定测试用例和推断测试结果的正确性和可操作性。<strong>黑盒测试方法</strong>主要有等价类划分法、边界值分析法、因果图法、错误推测法、综合策略、正交分析法，用于软件的确认测试。<br><strong>白盒测试</strong>也称逻辑驱动测试或者结构测试或基于结构的测试。它依赖于对程序细节的严密检验，针对特定条件和循环集设计测试用例，对软件的逻辑路径进行测试。在程序不同点检验程序的状态，来判断真实情况是否和预期的状态相一致。<strong>白盒测试方法</strong>主要包括逻辑覆盖发法，主要包括语句覆盖、判断覆盖、条件覆盖、判断条件覆盖、条件组合覆盖、路径覆盖</p>
+</li>
+<li><p>提高软件质量和可靠的技术大致可分为两大类：其中一类就是<strong>避开错误技术</strong>，但避开错误技术无法做到完美无缺和觉悟错误，这就需要软件设计能够<strong>容错能力强</strong>。</p>
+</li>
+<li>软件设计包括体系结构设计、接口设计、数据设计和过程设计。<a id="more"></a></li>
+<li>在开发一个系统时，如果用户对系统的目标不很清楚，难以定义需求，这时最好使用<strong>原型法</strong>的系统开发方法。应用原型法的主要目的就是获取需求。使用原型法，在用户的共同参与下可以改善和加快需求获取过程。其第一步是建造一个快速原型，实现客户或未来的用户与系统的交互，用户或客户对原型进行评价，进一步细化待开发软件的需求。通过逐步调整原型使其满足客户的要求，开发人员可以确定客户的真正需求是什么。第二步则在第一步的基础上开发客户满意的软件产品。显然，快速原型方法可以克服瀑布模型的缺点，减少由于软件需求不明确带来的开发风险，具有显著的效果。<br><strong>瀑布模型</strong>是一种将按软件生命周期划分为制定计划、需求分析、软件设计、程序编写、软件测试和运行维护等6个基本活动，并且规定了它们自上而下、相互衔接的固定次序的系统开发方法。瀑布模型强调文档的作用，并要求每个阶段都要仔细验证。<br><strong>V-模型</strong>是一种典型的测试模型。该模型通常会在其开始部分对软件开发过程进行描述，其中通过单元测试检测代码的开发是否符合详细设计的要求；集成测试检测各单元代码是否能完好地结合到一起，是否符合概要设计阶段提出的要求；系统测试检测已集成在一起的产品是否符合系统规格说明书的要求；而验收测试则检测产品是否符合最终用户的需求。<br><strong>螺旋模型</strong>是指将瀑布模型和快速原型模型结合起来，强调风险分析的一种开发模型。</li>
+<li><p>软件开发中的瀑布模型典型地刻画了软件生存周期的阶段划分，与其最相适应的软件开发方法是结构化方法。<br><strong>构件化方法</strong>有如下几个基本属性：①构件是可独立配置的单元，因此构件必须自包容。②构件强调与环境和其他构件的分离，因此构件的实现是严格封装的。构件可以在适当的环境中被复合使用，因此构件需要提供清楚的接口规范。③构件不应当是持续的，即构件没有个体特有的属性，理解为构件不应当与自身副本区别。<br>从以上属性可以看出，构件沿袭了对象的封装特性，但同时并不局限于一个对象，其内部可以封装一个或多个类、原犁对象，甚至过程，结构是灵活的。<br><strong>面向对象方法</strong>是一种非常实用的软件开发方法。它以客观实践中的对象为中心，其分析和设计思想符合人们的思维方式，分析和设计的结果与客观世界比较接近。<br><strong>结构化方法</strong>是指具有结构性的编程方法。其结构性主要反映在：编程工作是一个抽象的过程：按模块组装的方法进行编程的思想：所有程序都只含顺序结构、分支结构，以及重复结构。结构化分析以数据流图和控制流图为基础，系统分析员划分出流变换函数，然后用状态迁移图来创建行为模型，用数据词典开发数据模型。</p>
+</li>
+<li><p>在面向数据流的设计方法中，一般把数据流图中的数据流划分为变换流和事务流两种。<br>结构化设计方法方法采用结构图(SC)来描述程序的结构。结构图的基本成分由模块、调用和输入/输出数据组成。通常在需求分析阶段，用结构化分析方法产生了数据流图。面向数据流的设计能方便地将数据流图(DFD)转换成程序结构图，数据流图中从系统的输入数据到系统的输出数据流的一连串连续变换将形成一条信息流。数据流图的信息流可划分为变换流和事务流两种类型。信息沿着输入通路进入系统，同时将信息的外部形式转换成内部表示，然后通过变换中心处理，再沿着输出通路转换成外部形式化离开系统。具有这种特性的信息流称为<strong>变换流</strong>。<br>信息沿着输入通路到达一个事务中心，事务中心根据输入信息的类型在若干个动作序列中选择一个来执行，这种信息流称为<strong>事务流</strong>。</p>
+</li>
+<li>软件危机主要表现在：软件需求的增长得不到满足，软件生产成本高，价格昂贵，软件生产进度无法控制，软件需求定义不够准确，软件质量不易保证，软件可维护性差。软件危机的出现使得人们去寻找产生软件危机的内在原因，可归结为两个重要方面：一方面是由于软件生产本身存在着复杂性；另一方面与软件开发所使用的方法和技术相关。即软件本身的特点、缺乏好的开发方法和手段、开发效率低。</li>
+<li><strong>软件开发模型</strong>是指软件开发全部过程、活动和任务的结构框架。常用的软件开发模型有瀑布模型、演化模型、螺旋模型、喷泉模型等。<br><strong>瀑布模型</strong>给出了软件生存周期各阶段的固定顺序，上一阶段完成后才能进入下一阶段。<strong>演化模型</strong>（原型法）是在快速开发一个原型的基础上，根据用户在试用原型的过程中提出的反馈意见和建议，对原型进行改进，获得原型的新版本。重复这一过程，直到演化成最终的软件产品。<strong>螺旋模型</strong>将瀑布模型和演化模型相结合，它综合了两者的优点，<em>并增加了风险分析</em>。喷泉模型主要用来描述面向对象的开发过程。它体现了面向对象开发过程的迭代和无间隙特征。迭代意味着模型中的开发活动常常需要多次重复；无间隙是指开发活动(如分析、设计)之间不存在明显的边界，各项开发活动往往交叉迭代地进行。</li>
+<li><p>在选择开发方法时，有些情况不适合使用原型法，以下选项中不能使用快速原型法的情况是（D）。<br>A．系统的使用范围变化很大<br>B．系统的设计方案难以确定<br>C．用户的需求模糊不清<br>D．用户的数据资源缺乏组织和管理</p>
+<p>  分析：使用原型的原型化方法特别适用于需求不确定性较高的软件系统的开发。它的基本思想是根据用户给出的基本需求，通过快速实现构造出一个小型的可执行的模型，满足用户的基本要求，这就是系统界面原型。让用户计算机上实际运行这个用户界面原型，使用户在试用的过程中得到亲身感受和受到启发，作出反应和评价，提出同意什么和不同意什么。然后开发者根据用户的意见对原型加以改进。随着不断试验、纠错、使用、评价和修改，获得新的原型版本，如此周而复始，逐步减少分析和通信中的误解，弥补不足之处，进一步确定各种需求细节，适应需求的变更，从而提高最终产品的质量。</p>
+</li>
+<li><p>原型化方法是一类动态定义需求的方法，下列叙述中，哪一项不具有原型化方法的特征A．提供严格定义的文档<br>B．加强用户参与和决策<br>C．简化项目管理<br>D．加快需求的确定</p>
+<p>分析：原型化方法加强用户参与和决策、简化项目管理、加快需求的确定，适合于动态定义需求。而提供严格定义的文档是预先定义法的特征。</p>
+</li>
+<li>采用瀑布模型进行系统开发的过程中，每个阶段都会产生不同的文档。<br><strong>外部设计评审报告</strong>在概要设计和详细设计阶段之后产生；<strong>集成测评计划</strong>在开发编码完成之后的系统集成阶段产生；<strong>系统计划和需求说明</strong>在系统设计之前就已产生；在<strong>进行编码</strong>的同时，独立的设计单元测试计划。</li>
+<li>请说出7类信息系统.1.事务处理系统.2.管理信息系统.3.决策支持系统.4.主管信息系统.5.专家系统.6.通信和协作系统.7.办公自动化系统.</li>
+<li>电子商务和电子业务有啥区别？电子商务是指通过使用因特网购买和销售商品及服务。电子业务是指使用因特网进行日常的商务活动。</li>
+<li>什么是数据需求？数据需求是用户数据以实体、属性、关系和规则形式的表述。</li>
+<li>什么是过程需求？过程需求是用于某个业务过程及其信息、信息系统的处理需求的用户理解。</li>
+<li><strong>概要设计</strong>就是设计软件的结构，包括组成模块，模块的层次结构，模块的调用关系，每个模块的功能等等。同时，还要设计该项目的应用系统的总体数据结构和数据库结构，即应用系统要存储什么数据，这些数据是什么样的结构，它们之间有什么关系，概要设计阶段通常得到软件结构图。<strong>详细设计</strong>阶段就是为每个模块完成的功能进行具体的描述，要把功能描述转变为精确的、结构化的过程描述，详细设计阶段常用的描述方式有：流程图、N-S图、PAD图、伪代码等。 </li>
+<li><p>美国卡内基一梅隆大学SEI提出的CMM模型将软件过程的成熟度分为5个等级，以下选项中，属于可管理级的特征是( )。A．工作无序，项目进行过程中经常放弃当初的计划<br>B．建立了项目级的管理制度<br>C．建立了企业级的管理制度<br>D．软件过程和软件产品能够被控制</p>
+<p>分析：SEI的模型提供了衡量一个公司软件工程实践的整体有效性的方法，且建立了五级的过程成熟度级别。第一级：初始级；第二级：可重复级；第三级：定义级；第四级：管理级；第五级：优化级。<strong>第一级</strong> 初始级 软件过程是无序的，几乎没有明确定义的步骤，成功完全依赖个人努力和英雄式的核心任务：企业一般不具备稳定的软件开发与维护的环境，常在遇到问题的时候就放弃原定的计划，而只专注于编程与测试 <strong>第二级</strong> 可重复级 在这一级别上，建立了基本的项目管理过程来跟踪成本、进度和机能，制定了必要的过程纪律，并基于以往的项目的经验来计划与管理新的项目 需求管理、配置管理，软件子合同管理、项目跟踪与监控等 <strong>第三级</strong> 已定义级 管理和工程的软件过程已经文档化、标准化，并综合成整个软件开发组织的标准软件过程。所有的项目都采用根据实际情况修改后得到的标准软件过程来发展和维护软件 组织过程定义、集成软件管理、软件产品工程等 <strong>第四级</strong> 定量管理级 在这一级别上，制定了软件工程和产品质量的详细度量标准，使用定量分析来不断地改进和管理软件过程。软件过程和产品的质量都被开发组织的成员所理解和控制，因此软件产品具有可预期的高质量 定量的过程管理、软件质量管理 <strong>第五级</strong> 优化级 通过来自过程质量反馈和来自新观念、新技术的反馈使过程能持续不断地改进。可见整个企业将会把重点放在对过程进行不断的优化。企业会采取主动去找出过程的弱点与长处，以达到预防缺陷的目标 缺陷预防、技术变更管理过程变更管理 </p>
+</li>
+</ol>
+<h2 id="数据结构练习"><a href="#数据结构练习" class="headerlink" title="数据结构练习"></a>数据结构练习</h2><ol>
+<li><p>从尾到头打印链表</p>
+<pre><code>  /**
+*public class ListNode {
+*int val;
+*ListNode next = null;
+*
+*ListNode(int val) {
+*this.val = val;
+*}
+*}
+*
+*/
+import java.util.ArrayList;
+import java.util.Stack;
+public class Solution {
+public ArrayList&lt;Integer&gt; printListFromTailToHead(ListNode listNode) {
+Stack&lt;Integer&gt; stack = new Stack&lt;&gt;();
+while (listNode != null) {
+    stack.push(listNode.val);
+    listNode=listNode.next;
+}
+    ArrayList&lt;Integer&gt; list= new ArrayList&lt;&gt;();
+    while(!stack.isEmpty()){
+    list.add(stack.pop());
+    }
+    return list;
+}
+}
+</code></pre></li>
+<li>二叉树遍历方式</li>
+</ol>
+<p><a href="https://blog.csdn.net/jwentao01/article/details/46843049" target="_blank" rel="noopener">二叉树遍历(图解)</a>  </p>
+<p><a href="https://blog.csdn.net/lemon_tree12138/article/details/49798221" target="_blank" rel="noopener">数据结构：关于重建二叉树的三种思路</a></p>
+<p><img src="/2018/05/24/2018-05-24-软件测试了解及数据结构练习/1.jpg" alt="图1"> </p>
+<pre><code>/**
+ * Definition for binary tree
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+public class Solution {
+
+
+public TreeNode reConstructBinaryTree(int [] pre,int [] in) {
+           if(pre==null||in==null){
+        return null;
+    }
+
+    java.util.HashMap&lt;Integer,Integer&gt; map= new java.util.HashMap&lt;Integer, Integer&gt;();
+    for(int i=0;i&lt;in.length;i++){
+        map.put(in[i],i);
+    }
+    return preIn(pre,0,pre.length-1,in,0,in.length-1,map);
+}
+
+  public TreeNode preIn(int[] p,int pi,int pj,int[] n,int ni,int nj,java.util.HashMap&lt;Integer,Integer&gt; map){
+
+    if(pi&gt;pj){
+        return null;
+    }
+    TreeNode head=new TreeNode(p[pi]);
+    int index=map.get(p[pi]);
+    head.left=preIn(p,pi+1,pi+index-ni,n,ni,index-1,map);
+    head.right=preIn(p,pi+index-ni+1,pj,n,index+1,nj,map);
+    return head;
+}
+}
+</code></pre><p><strong>排序算法学习</strong></p>
+<p><a href="https://www.cnblogs.com/onepixel/articles/7674659.html" target="_blank" rel="noopener">十大经典排序算法（动图演示）】</a></p>
+<p><strong>今日心得</strong></p>
+<p>“要得到你必须付出，要付出你还要学会坚持，如果你觉得很难，那你就放弃，但是你放弃了就不要抱怨，人生就是这样，世界真的是平衡的，每个人都要靠自己的努力去决定自己生活的样子。”</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2018/05/24/2018-05-24-软件测试了解及数据结构练习/">2018-05-24-软件测试了解及数据结构练习</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">Virya-Hh</a></p>
+        <p><span>发布时间:</span>2018-05-24, 08:59:13</p>
+        <p><span>最后更新:</span>2018-05-24, 21:35:45</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2018/05/24/2018-05-24-软件测试了解及数据结构练习/" title="2018-05-24-软件测试了解及数据结构练习">http://yoursite.com/2018/05/24/2018-05-24-软件测试了解及数据结构练习/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2018/05/24/2018-05-24-软件测试了解及数据结构练习/　　作者: Virya-Hh" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2018/05/23/2018-05-23-hexo主题配置/">
+                    2018/05/23 -- hexo主题配置
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#腾讯测试工程师笔试"><span class="toc-number">1.</span> <span class="toc-text">腾讯测试工程师笔试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据结构练习"><span class="toc-number">2.</span> <span class="toc-text">数据结构练习</span></a></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"2018-05-24-软件测试了解及数据结构练习　| Hexo　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+        <section id="comments">
+    <style> aside.comment-bar { margin: auto 30px; }</style>
+    <div id="disqus_thread"></div>
+    <script>
+        var disqus_config = function(){
+            this.page.url = 'http://yoursite.com/2018/05/24/2018-05-24-软件测试了解及数据结构练习/';
+            this.page.identifier = '2018/05/24/2018-05-24-软件测试了解及数据结构练习/';
+        };
+        var loadComment = function(){
+            var d = document, s = d.createElement('script');
+            s.src = '//.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        }
+    </script>
+    
+    <script> loadComment(); </script>
+
+</section>
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2018/05/23/2018-05-23-hexo主题配置/" title="下一篇: 2018/05/23 -- hexo主题配置">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/05/24/2018-05-24-软件测试了解及数据结构练习/">2018-05-24-软件测试了解及数据结构练习</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/23/2018-05-23-hexo主题配置/">2018/05/23 -- hexo主题配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/22/MATLAB之GUI界面搭建学习/">MATLAB之GUI界面搭建学习</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/22/github-hexo-个人博客搭建教程（一）（含填坑）/">github+hexo 个人博客搭建教程（一）（含填坑）</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2016-2018 Virya-Hh
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 2;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>
