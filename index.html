@@ -301,11 +301,11 @@
 4. Ping+域名，每次查询IP地址都会发生变化，原因？
 </code></pre><p><strong>Solution:</strong></p>
 <ol>
-<li><p>参考<a href="https://www.icann.org/resources/pages/epp-status-codes-2014-06-16-en#addPeriod" target="_blank" rel="noopener">域名状态解析</a></p>
+<li><p>实验证明，addPeriod状态时，可以正常访问网站。具体说明参考<a href="https://www.icann.org/resources/pages/epp-status-codes-2014-06-16-en#addPeriod" target="_blank" rel="noopener">域名状态解析</a></p>
 </li>
 <li><p>本质上说说没有影响的，只是选择了不同的DNS服务器进行解析，但是用其他的DNS服务器，需要自己去检测时候可以解析，而使用万网的DNS服务器，会自动选择可以解析的服务器，因此最好选用万网DNS。<strong>此处的坑</strong>：修改DNS之后会提醒你去查看whios的DNS信息，若不一致，建议修改为一致的。这里需要时间等待，一般情况下修改完之后隔一段时间<strong>whios</strong>的会进行更新，不要一点开看到不一样就又修改为原来的DNS，这里浪费了很长时间。</p>
 </li>
-<li>参考 <a href="https://blog.csdn.net/qq_29232943/article/details/52786603" target="_blank" rel="noopener">GitHub Pages 绑定来自阿里云的域名</a></li></ol>
+<li>不同的时间段，中间的ip地址会有一定的变化，因此在进行解析的时候不要添加A，而是添加CNAME，这样添加的值是网址而不是IP地址。</li></ol>
           
       
     </div>
