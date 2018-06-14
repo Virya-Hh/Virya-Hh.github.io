@@ -185,7 +185,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gui/">gui</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/matlab/">matlab</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习心得/">学习心得</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/环境配置/">环境配置</a></li></ul>
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gui/">gui</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/matlab/">matlab</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习心得/">学习心得</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习心得，Java/">学习心得，Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/环境配置/">环境配置</a></li></ul>
                     </div>
                 </section>
                 
@@ -263,6 +263,294 @@
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-Java底层基础容易遗忘知识点总结" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/06/13/Java底层基础容易遗忘知识点总结/" class="article-date">
+      <time datetime="2018-06-13T07:18:40.000Z" itemprop="datePublished">2018-06-13</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/13/Java底层基础容易遗忘知识点总结/">Java底层基础容易遗忘知识点总结</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <ol>
+<li><p>jdk/jre的概念及相互之间的关系</p>
+<p> jvm=java虚拟机</p>
+<p> jre=jvm+核心类库 （jre是Java的运行环境）</p>
+<p> jdk=jre+开发工具  （JdkJava 语言的软件开发工具包）</p>
+</li>
+<li><p>java语言诞生于1995年5月23日</p>
+</li>
+<li>‘\n’指的的是回车，就是另起一行;’\r’指的的是换行，就是回到一行的开头</li>
+<li>布尔值 boolean 当声明一个变量时，占用4个字节，当声明一个数组时，每个数组元素占用一个字节。</li>
+<li>负数的存储原理：-7 先求-7的绝对值，然后求其二进制，取反+1 即为-7的补码。</li>
+<li>% 正负号取决于被除数</li>
+<li>编译器在编译的时候能确定常量的值，而不能确定变量的值，变量在运行时分配存储空间。但是+=在编译时可以进行强制类型转换，因此当用+=连接变量时，如果没有超过范围，是不会因为没有进行强制类型转换而报错的。</li>
+<li>switch-case<br> 1）. switch 后边只可能跟 byte char int double short<br> 2）. 从上往下执行，若匹配上某case，执行cese中的代码，若没有遇break，则会不断的往下执行，直到遇到break<br> 3）. 无论顺序如何，永远先判断case, 没有符合的才执行default</li>
+<li>堆内存和栈内存<ol>
+<li>栈内存存储的是局部变量，一旦出了工作域就会从内存中消失，但是堆内存存储的是对象，不会立刻消失，只能等待垃圾回收器不定时的回收。任何new创建的对象jvm都会在堆内存中开辟一个空间</li>
+</ol>
+</li>
+<li>反编译 javap -c -l -private  其中-c指的是输出字节码指令，-l指的是输出行及局部变量表 -private 指的是显示所有类和成员。</li>
+<li>构造函数要注意的细节：<ol>
+<li>构造函数是没有返回值类型的。</li>
+<li>构造函数的函数名必须要与类名一致。</li>
+<li>构造函数并不是由我们手动调用的，而是在创建对应的对象时，jvm就会主动调用到对应的构造函数。</li>
+<li>如果一个类没有显式的写上一个构造方法时，那么java编译器会为该类添加一个无参的构造函数的。</li>
+<li>如果一个类已经显式的写上一个构造方法时,那么java编译器则 不会再为该类添加 一个无参的构造方法。</li>
+<li>构造函数是可以在一个类中以函数重载的形式存在多个的。</li>
+</ol>
+</li>
+<li>代码块：在Java中，使用{}括起来的代码成为代码块<br>根据其位置和声明的不同，可以分为：<ol>
+<li>局部代码块：局部位置，用于限定变量的生命周期 原因是：局部代码块的作用域是在代码块内，出了代码块之外变量就会释放。</li>
+<li>构造代码块：在类中的成员位置，用{}括起来的代码。每次调用构造方法执行前，都会先执行构造代码块。<br>作用：可以把多个构造方法的共同代码放在一起。 <ol start="3">
+<li>静态代码块：在类中的成员位置，用{}括起来的代码，只不过它用static修饰<br>作用：一般是对类进行初始化 </li>
+<li>静态代码块、构造代码块、构造方法的执行顺序？<br>静态-》构造代码块-》构造方法<br>静态代码块：只执行一次<br>构造方法：每次调用构造方法都执行 </li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>this关键字</p>
+<p>this关键字作用：</p>
+<pre><code>1. 如果存在同名成员变量与局部变量时，在方法内部默认是访问局部变量的数据，可以通过this关键字指定访问成员变量的数据。
+2. 在一个构造函数中可以调用另外一个构造函数初始化对象。
+</code></pre></li>
+</ol>
+<pre><code>this关键字调用其他的构造函数要注意的事项：
+    1. this关键字调用其他的构造函数时，this关键字必须要位于构造函数中的第一个语句。
+    2. this关键字在构造函数中不能出现相互调用 的情况，因为是一个死循环。
+
+this关键字要注意事项：
+    1. 存在同名的成员变量与局部变量时，在方法的内部访问的是局部变量(java 采取的是“就近原则”的机制访问的。)
+    2. 如果在一个方法中访问了一个变量，该变量只存在成员变量的情况下，那么java编译器会在该变量的前面添加this关键字。
+</code></pre><ol start="14">
+<li><p>单例设计模式的步骤：    </p>
+<p>饿汉单例设计模式</p>
+<ol>
+<li>私有化构造函数。</li>
+<li>声明本类的引用类型变量，并且使用该变量指向本类对象。</li>
+<li>提供一个公共静态的方法获取本类的对象。</li>
+</ol>
+<p>懒汉单例设计模式：</p>
+<ol>
+<li>私有化构造函数。</li>
+<li>声明本类的引用类型变量，但是不要创建对象，</li>
+<li>提供公共静态 的方法获取本类 的对象，获取之前先判断是否已经创建了本类 对象，如果已经创建了，那么直接返回对象即可，如果还没有创建，那么先创建本类的对象，然后再返回。</li>
+</ol>
+</li>
+</ol>
+<pre><code>饿汉单例设计模式
+1. 私有化构造函数。
+2. 声明本类的引用类型变量，并且使用该变量指向本类对象。
+3. 提供一个公共静态的方法获取本类的对象。
+
+懒汉单例设计模式：
+1. 私有化构造函数。
+2. 声明本类的引用类型变量，但是不要创建对象，
+3. 提供公共静态 的方法获取本类 的对象，获取之前先判断是否已经创建了本类 对象
+，如果已经创建了，那么直接返回对象即可，如果还没有创建，那么先创建本类的对象，
+然后再返回。
+
+推荐使用： 饿汉单例设计模式。  因为懒汉单例设计模式会存在线程安全问题，目前还不能保证一类在内存中只有一个对象。
+</code></pre>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习心得，Java/">学习心得，Java</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-立体匹配算法总结及研究进展" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/05/31/立体匹配算法总结及研究进展/" class="article-date">
+      <time datetime="2018-05-31T11:22:05.000Z" itemprop="datePublished">2018-05-31</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/31/立体匹配算法总结及研究进展/">立体匹配算法总结及研究进展</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p><a href="https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/Scharstein-IJCV02.pdf" target="_blank" rel="noopener">A Taxonomy and Evaluation of Dense Two-Frame Stereo<br>Correspondence Algorithms</a></p>
+<p><a href="https://wenku.baidu.com/view/5b359d7d5acfa1c7aa00cc7b.html" target="_blank" rel="noopener">双目立体匹配算法的研究与进展</a></p>
+<p><a href="https://blog.csdn.net/chuhang_zhqr/article/details/51179881" target="_blank" rel="noopener">几种典型的立体匹配算法</a></p>
+<p><a href="https://wenku.baidu.com/view/6032c3cc866fb84ae55c8d27.html" target="_blank" rel="noopener">立体匹配算法进展</a></p>
+<p>根据匹配算法使用的约束信息的不同，立体匹配算法总体上分为局域算法、全局算法及半全局匹配算法三种。</p>
+<h3 id="基于局部约束的算法"><a href="#基于局部约束的算法" class="headerlink" title="基于局部约束的算法"></a>基于局部约束的算法</h3><p>局域算法利用的是对应点本身以及邻近的局部区域的约束信息，局域算法的优点是效率高，但是它对局部的一些由于遮挡和纹理单一等造成的模糊比较敏感，易造成误匹配。</p>
+<pre><code>优点：涉及信息量较少，计算复杂度低，实时性高； 
+缺点：对噪声较敏感，对无纹理区域、视差不连续区域和遮挡区域匹配效果差； 
+</code></pre><p><strong>分类：</strong> </p>
+<ol>
+<li>区域匹配算法： </li>
+</ol>
+<p>区域匹配直接利用图像的灰度信息，主要用于表面光滑以及具有明显纹理特征的图像，使用区域匹配可以直接获得稠密的深度图，但是对于缺乏纹理和深度不连续的情况，适应性较差，且这种方法的计算量很大，匹配精度较差。</p>
+<p><a href="https://blog.csdn.net/hujingshuang/article/details/47759579" target="_blank" rel="noopener">图像配准 基于灰度的模板匹配算法（一）：MAD、SAD、SSD、MSD、NCC、SSDA、SATD算法</a></p>
+<p>基于灰度的图像匹配方法研究</p>
+<ol start="2">
+<li>特征匹配算法：</li>
+</ol>
+<p>特征匹配基于图像的几何特征，如边缘、轮廓、拐点、线段等对图像进行匹配，由于几何特征的稀疏性和不连续性，因此特征匹配只能得到稀疏的深度图，需要通过内插方法才能得到稠密的深度图，特征匹配以几何特征为基元，不易受光线的影响，因此鲁棒性较好，而且计算量小，速度快。<br></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习心得/">学习心得</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2018/05/31/立体匹配算法总结及研究进展/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-Java中对于字符串的认识" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/05/30/Java中对于字符串的认识/" class="article-date">
+      <time datetime="2018-05-30T03:16:48.000Z" itemprop="datePublished">2018-05-30</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/30/Java中对于字符串的认识/">Java中对于字符串的认识</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h3 id="创建String类的对象的两种方式："><a href="#创建String类的对象的两种方式：" class="headerlink" title="创建String类的对象的两种方式："></a>创建String类的对象的两种方式：</h3><ol>
+<li>“”直接赋值法</li>
+</ol>
+<p>String Str = “jack”这个语句会先检查字符串常量池是否存放这个”jack1”这个字符串对象，如果没有存在，那么就会在字符串常量池中创建这个字符串对象，如果存在直接返回该字符串的内存地址值。</p>
+<ol start="2">
+<li>new关键字法</li>
+</ol>
+<p>String str3 = new String(“jack”) 该语句会创建两个对象,首先会先检查字符串常量池中存不存在jack这个字符串对象，如果不存在就会创建，如果存在就返回堆内存地址值。创建了出来之后，new String这个语句就会在堆内存中开辟一个字符串对象。总共两个对象。</p>
+<p>补充：“==”用于比较引用数据类型的时候比较的是两个对象的内存地址；equals方法<strong>默认</strong>比较两个对象的内存地址 </p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习心得，Java/">学习心得，Java</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-关于数据库E-R图及关系模式的认识" class="article article-type-post" itemscope itemprop="blogPost">
   
