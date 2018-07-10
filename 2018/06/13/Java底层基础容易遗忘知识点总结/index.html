@@ -23,7 +23,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="jdk/jre的概念及相互之间的关系  jvm=java虚拟机  jre=jvm+核心类库 （jre是Java的运行环境）  jdk=jre+开发工具  （JdkJava 语言的软件开发工具包）  java语言诞生于1995年5月23日  ‘\n’指的的是回车，就是另起一行;’\r’指的的是换行，就是回到一行的开头 布尔值 boolean 当声明一个变量时，占用4个字节，当声明一个数组时，每个数">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-14T03:23:43.858Z">
+<meta property="og:updated_time" content="2018-07-10T13:16:55.544Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java底层基础容易遗忘知识点总结">
 <meta name="twitter:description" content="jdk/jre的概念及相互之间的关系  jvm=java虚拟机  jre=jvm+核心类库 （jre是Java的运行环境）  jdk=jre+开发工具  （JdkJava 语言的软件开发工具包）  java语言诞生于1995年5月23日  ‘\n’指的的是回车，就是另起一行;’\r’指的的是换行，就是回到一行的开头 布尔值 boolean 当声明一个变量时，占用4个字节，当声明一个数组时，每个数">
@@ -341,7 +341,9 @@
 </li>
 <li><p>this关键字</p>
 <p>this关键字作用：</p>
-<pre><code>1. 如果存在同名成员变量与局部变量时，在方法内部默认是访问局部变量的数据，可以通过this关键字指定访问成员变量的数据。
+<pre><code>1. 如果存在同名成员变量与局部变量时，在方法内部
+2. 
+3. 是访问局部变量的数据，可以通过this关键字指定访问成员变量的数据。
 2. 在一个构造函数中可以调用另外一个构造函数初始化对象。
 </code></pre></li>
 </ol>
@@ -486,6 +488,455 @@ class Demo5
     }
 
 }
+</code></pre><p><strong>自我总结：</strong> 只要传入交换函数的变量值是地址时，就可以实现交换。是因为传入的是地址时，虽然传入的变量和原来的变量不是一个，但是指向了同一个地址，因此对于交换值是有效的，例如上个例子中传入的arr,是数组的地址，在栈内存中，指向堆内存中的数组，还有对象p,也是指的的地址。</p>
+<ol start="17">
+<li><p>接口的定义格式：</p>
+<p>interface 接口名{</p>
+<p>}</p>
+<p>接口要注意的事项 ：</p>
+<pre><code>1. 接口是一个特殊的类。
+2. 接口的成员变量默认的修饰符为： public static final 。那么也就是说接口中的成员变量都是常量。
+3. 接口中的方法都是抽象的方法，默认的修饰符为： public abstract。
+4. 接口不能创建对象。
+5. 接口是没有构造方法的。
+6. 接口是给类去实现使用的，非抽象类实现一个接口的时候，必须要把接口中所有方法全部实现。
+</code></pre><p>接口的作用：</p>
+<ol>
+<li>程序的解耦。  （低耦合）</li>
+<li>定义约束规范。</li>
+<li>拓展功能。</li>
+</ol>
+</li>
+<li><p>类与接口之间关系： 实现关系。</p>
+<p>类与接口要注意的事项：</p>
+<pre><code>1. 非抽象类实现一个接口时，必须要把接口中所有方法全部实现。
+2. 抽象类实现一个接口时，可以实现也可以不实现接口中的 方法。
+3. 一个类可以实现多个接口 。
+</code></pre></li>
+</ol>
+<p><strong>自我总结：</strong> 单继承与多实现的原因：单继承是因为当有两个父类拥有同函数名的函数时，自类无法辨认继承哪个函数。多实现时候，当出现上述情况，自类自己去实现函数的实体，因此不会有冲突。</p>
+<ol start="19">
+<li>多态：一个对象具备多种形态。(父类的引用类型变量指向了子类的对象)</li>
+</ol>
+<p>或者是接口 的引用类型变量指向了接口实现类的对象)</p>
+<p>多态的前提：必须存在继承或者实现 关系。</p>
+<pre><code>动物  a  = new   狗();
+</code></pre><p>多态要注意的细节：</p>
+<pre><code>1.  多态情况下，子父类存在同名的成员变量时，访问的是父类的成员变量。
+2.  多态情况下，子父类存在同名的非静态的成员函数时，访问的是子类的成员函数。
+3.  多态情况下，子父类存在同名的静态的成员函数时，访问的是父类的成员函数。
+4.  多态情况下，不能访问子类特有的成员。
+
+总结：多态情况下，子父类存在同名的成员时，访问的都是父类的成员，除了在同名非静态函数时才是访问子类的。
+</code></pre><ol start="20">
+<li><p>编译看左边，运行不一定看右边。</p>
+<p>编译看左边：java编译器在编译的时候，会检查引用类型变量所属的类是否具备指定的成员，如果不具备马上编译报错。</p>
+</li>
+<li><p>抽象类：</p>
+<p>什么是时候使用抽象类：</p>
+<pre><code>描述一类事物的时候，发现该事物确实存在着某种行为，但是 目前这种是不具体的，这时候应该抽取这种行为的声明，而不去实现该种行为，这时候这种行为我们把它称为抽象的行为，这时候应该使用抽象类。
+</code></pre><p>抽象类要注意的细节：</p>
+<pre><code>1. 如果一个方法没有方法体，那么该方法必须使用abstract修饰。
+2. 如果一个类函数抽象方法，那么这个类肯定是一个抽象类或者接口。
+3. 抽象类不能创建对象。
+4. 抽象类是含有构造方法的。
+5. 抽象类可以存在非抽象方法与抽象方法。
+6. 抽象类可以不存在抽象方法。
+7. 非抽象类继承抽象类的时候，必须要把抽象类中所有抽象方法全部实现。
+</code></pre><p>abstract不能与以下关键字一起使用</p>
+<pre><code>1. abstract 不能与static共同修饰一个方法。
+2. abstract 不能与private共同修饰一个方法。
+3. abstract不能以final关键字共同修饰一个方法。
+</code></pre><p>原因：1.  因为static修饰的方法是静态方法，其可以直接被类所调用。而abstract修饰的方法为抽象方法，即无方法体的方法，不能够被直接调用，需要在子类或实现类中去编写完整的方法处理逻辑后才能使用。2. private修饰的类只可以定义在内部类；private 修饰的方法/属性只可以在类中调用，重写时是访问不到这些方法和属性的。3. final 修饰的类/方法/属性均不可再次更改，故而不可以被重写。</p>
+</li>
+<li><p>匿名内部类：没有类名的类就称作为匿名内部类。</p>
+<p>匿名内部类的好处：简化书写。</p>
+<p>匿名内部类的使用前提：必须存在继承或者实现关系才能使用。</p>
+</li>
+</ol>
+<pre><code>匿名内部类一般是用于实参。
+</code></pre><ol start="21">
+<li>匿名内部类：<br>匿名内部类在调用自己特有的方法时，只能用<br>new Animal(){}.bite(); bite指的是函数名称或者直接用局部内部类进行调用，不能使用Animal a=new Animal(){}; a.bite();是因为多多态的影响，需要进行强转，但是匿名内部类无法进行强转。<br>匿名内部类时，new Animal(){};即指的的是对象。</li>
+<li><p>异常的处理：</p>
+<p> 方式一：捕获处理</p>
+<p>  捕获处理的格式：</p>
+<pre><code>try{
+    可能发生异常的代码；
+
+}catch(捕获的异常类型 变量名){
+    处理异常的代码....
+}
+</code></pre></li>
+</ol>
+<pre><code>    捕获处理要注意的细节：
+        1. 如果try块中代码出了异常经过了处理之后，那么try-catch块外面的代码可以正常执行。
+        2. 如果try块中出了异常的代码，那么在try块中出现异常代码后面的代码是不会执行了。
+        3. 一个try块后面是可以跟有多个catch块的，也就是一个try块可以捕获多种异常的类型。
+        4. 一个try块可以捕获多种异常的类型,但是捕获的异常类型必须从小到大进行捕获，否则编译报错。
+
+
+疑问一 : 异常的处理感觉没有多大作用，因为都是输出一个话而已?
+        异常处理非常有用，只不过是由于我们目前所接触的知识点太过于局限而已。
+
+疑问二： 以后捕获处理 的时候是否就是捕获Exception即可？
+    错的，因为我们在现实开发中遇到不同的异常类型的时候，我往往会有不同 的处理方式。
+    所以要分开不同的异常类型处理。
+
+方式二：抛出处理
+
+抛出处理（throw throws）
+
+
+抛出处理要注意的细节：
+        1. 如果一个方法的内部抛出了一个异常 对象，那么必须要在方法上声明抛出。
+        2. 如果调用了一个声明抛出异常 的方法，那么调用者必须要处理异常。
+        3. 如果一个方法内部抛出了一个异常对象，那么throw语句后面的代码都不会再执行了（一个方法遇到了throw关键字，该方法也会马上停止执行的）。
+        4. 在一种情况下，只能抛出一种类型异常对象。
+
+throw 与throws两个关键字：
+    1. throw关键字是用于方法内部的，throws是用于方法声声明上的。
+    2. throw关键字是用于方法内部抛出一个异常对象的，throws关键字是用于在方法声明上声明抛出异常类型的。
+    3. throw关键字后面只能有一个异常对象，throws后面一次可以声明抛出多种类型的 异常。
+
+
+疑问：何时使用抛出处理？何时捕获处理？原则是如何？
+    如果你需要通知到调用者，你代码出了问题，那么这时候就使用抛出处理.
+    如果代码是直接与用户打交道遇到了异常千万不要再抛，再抛的话，就给了用户了。
+    这时候就应该使用捕获处理。
+</code></pre><ol start="23">
+<li>内部类</li>
+</ol>
+<p>内部类类别：</p>
+<pre><code>成员内部类: 在一个类的成员位置定义另外一个类，那么另外 一个 类就称作为成员内部类。
+
+    成员内部类的访问方式：
+        方式1： 在外部类内提供一个方法创建内部类的对象进行访问。
+
+        方式2： 在其他类创建内部类的对象进行访问。 创建的格式： 外部类.内部类  变量名 = new 外部类().new 内部类();
+
+        注意：如果是静态内部类在其他类的创建对象方式：  外部类.内部类 变量名=  new 外部类.内部类();
+
+    成员内部类要注意的事项：
+        1. 成员内部类可以直接访问外部类成员。
+        2. 如果成员内部类与外部类存在同名的成员，在内部类中默认是访问内部类 的成员。
+            成员通过“外部类.this.成员”指定访问外部类的成员。
+        3. 如果成员内部类出现了静态的成员，那么该成员内部类也必须使用static修饰。
+        4. 如果成员内部类是私有的，那么创建内部类的对象就只能在外部类提供方法创建。
+
+局部内部类  ： 在一个类的方法内部定义另外一个类,  另外一个类就称作为局部内部类。
+
+局部内部类要注意： 如果局部内部类访问了局部变量，那么该变量需要使用fianl修饰。 （原因： 因为生命周期不一致，所以内部类访问局部变量其实是一个复制品。）
+
+
+匿名内部类 : 没有类名的类。
+
+匿名内部类的好处： 简化书写。
+
+匿名内部类的使用前提： 必须存在继承或者实现关系。
+
+匿名内部类的格式：
+
+    new 父类(父接口){
+
+        匿名内部类的成员;
+
+    };
+</code></pre><ol start="24">
+<li><p>权限修饰符： 权限修饰符就是控制被修饰的成员的范围可见性。</p>
+<pre><code>            public(公共)        protected(受保护)           default(缺省)       private (大到小)
+
+同一个类      true                 true                        true                 true
+</code></pre></li>
+</ol>
+<pre><code>同一个包      true                 true                        true                  false
+
+
+子父类        true                  true                      false                   false
+
+
+不同包        true                 false                      false                   false
+</code></pre><p>注意： 在不同包下面只有public 与 protected 可以访问，而且protected必须是在继承关系下才能够访问</p>
+<ol start="25">
+<li>模板模式 ：解决某类事情的步骤有些是固定的，有些是会发生变化的，那么这时候我们可以<br>为这类事情提供一个模板代码，从而提高效率 。</li>
+</ol>
+<pre><code>需求；编写一个计算程序运行时间的模板。
+
+模板模式的步骤：
+    1. 先写出解决该类事情其中的一件的解决方案。
+    2. 分析代码，把会发生变化的代码抽取出来独立成一个方法。把该方法描述成一个抽象的方法。
+    3. 使用**final**修饰模板方法，防止别人 
+    4. 
+    5. 你的模板方法。
+</code></pre><ol start="26">
+<li>如果一个函数传入的是一个接口类型，实际上传入的是该接口的实现类对象。</li>
+<li>如果需要将一个文件导入eclipse中时，File–&gt;Import–&gt;General–&gt;Existing Projects into Workspace—-&gt;Next—&gt;select root directory 选择一个路径—&gt;finish即可。<ol start="28">
+<li>bject类：</li>
+</ol>
+</li>
+</ol>
+<pre><code>Object类常用的方法：
+    toString();     返回该对象的字符串表示。 返回一个字符串用于描述该对象的。返回的字符标识：完整类名+@+对象哈希吗
+疑问： toString() 有何作用？      重写toString之后，我们直接输出一个对象的时候，就会输出符合我们所需求的格式数据。
+
+    equals(Object obj)   用于比较两个对象的内存地址，判断两个对象是否为同一个对象。
+
+    hashCode()   返回该对象的哈希码值(大家可以把哈希码就 理解成是对象的内存地址)/
+</code></pre><p><strong><br>    java中的规范</strong>：一般我们重写了一个类的equals方法，我们都会重写它的hashCode方法。但是如果是重写了一个类的hashcode方法的时候，不需要重写equals方法。</p>
+<p><strong>注意：</strong></p>
+<pre><code>1. String类重写了Object的equals方法，比较的是两个字符串对象 的内容 是否一致。
+2. &quot;==&quot;用于比较 引用数据类型数据的时候比较的是两个对象 的内存地址，equals方法默认情况下比较也是两个对象 的内存地址。
+</code></pre><ol start="29">
+<li>自定义线程的创建方式:</li>
+</ol>
+<p>方式一 ： </p>
+<pre><code>1. 自定义一个类继承Thread类。
+2. 重写Thread类的run方法，把自定义线程的任务代码写在run方法上。
+3. 创建Thread的子类对象，并且调用start方法启动一个线程。 
+
+注意：千万不要直接调用run方法，调用start方法的时候线程就会开启，线程一旦开启就会执行run方法中代码，如果直接调用
+run方法，那么就 相当于调用了一个普通的方法而已。
+</code></pre><p>方式二：</p>
+<pre><code>1. 自定义一个类实现Runnable接口。
+2. 实现Runnable接口 的run方法，把自定义线程的任务定义在run方法上。
+3. 创建Runnable实现类对象。
+4. 创建Thread类 的对象，并且把Runnable实现类的对象作为实参传递。
+5. 调用Thread对象 的start方法开启一个线程。
+</code></pre><p>问题1： 请问Runnable实现类的对象是线程对象吗？<br>    Runnable实现类的对象并 不是一个线程对象，只不过是实现了Runnable接口 的对象而已。<br>    只有是Thread或者是Thread的子类才是线程 对象。</p>
+<p>问题2： 为什么要把Runnable实现类的对象作为实参传递给Thread对象呢？作用是什么？<br>    作用就是把Runnable实现类的对象的run方法作为了线程的任务代码去执行了。</p>
+<p>推荐使用： 第二种。 实现Runable接口的。<br>原因： 因为java单继承 ,多实现的。</p>
+<ol start="30">
+<li>线程通讯： 一个线程完成了自己的任务时，要通知另外一个线程去完成另外一个任务.</li>
+</ol>
+<p>生产者与消费者</p>
+<pre><code>wait():  等待   如果线程执行了wait方法，那么该线程会进入等待的状态，等待状态下的线程必须要被其他线程调用notify方法才能唤醒。
+notify()： 唤醒    唤醒线程池等待线程其中的一个。
+notifyAll() : 唤醒线程池所有等待 线程。
+
+
+wait与notify方法要注意的事项：
+    1. wait方法与notify方法是属于Object对象 的。
+    2. **wait方法与notify方法必须要在同步代码块或者是同步函数中才能使用。**
+    3. wait方法与notify方法必需要由锁对象调用。
+</code></pre><ol start="31">
+<li>进程: 进程就是正在运行的应用程序。 进程了负责了内存空间划分。</li>
+</ol>
+<p>线程： 一个进程中的 代码是由线程去执行的，线程也就是进程中一个执行路径。</p>
+<p>多线程： 一个进程中有多个线程可以同时执行任务。</p>
+<p>多线程 的好处：</p>
+<pre><code>1. 解决一个进程中可以同时执行多个任务的问题。
+2. 提高了资源利用率。
+</code></pre><p>多线程的弊端：</p>
+<pre><code>1. 增加了cpu的负担。
+2. 降低了一个进程中线程 的执行概率。
+3. 出现了线程 安全问题。
+4. 会引发死锁现象。
+</code></pre><p>自定义线程 的实现方式：</p>
+<pre><code>方式一 ： 
+    1. 自定义一个类继承Thread类。
+    2. 重写Thread类的run方法，把自定义线程的任务代码写在run方法上。
+    3. 创建Thread的子类对象，并且调用start方法启动一个线程。 
+
+注意：千万不要直接调用run方法，调用start方法的时候线程就会开启，线程一旦开启就会执行run方法中代码，如果直接调用
+run方法，那么就 相当于调用了一个普通的方法而已。
+</code></pre><p>线程安全问题：</p>
+<p>线程安全出现 的根本原因：</p>
+<pre><code>1. 存在两个或者两个以上的线程对象共享同一个资源。
+2. 多线程操作共享资源的代码 有多句。
+</code></pre><p>线程安全问题的解决方案：</p>
+<pre><code>方式一： 可以使用同步代码块去解决。
+
+格式：
+    synchronized(锁对象){
+        需要被同步的代码
+    }
+</code></pre><p>同步代码块要注意的事项：</p>
+<pre><code>1. 锁对象可以是任意的一个对象。
+2. 一个线程在同步代码块中sleep了，并不会释放锁对象。
+3. 如果不存在着线程安全问题，千万不要使用同步代码块，因为会降低效率。
+4. 锁对象必须是多线程共享的一个资源，否则锁不住。
+
+
+方式二：同步函数  ：  同步函数就是使用synchronized修饰一个函数。
+
+同步函数要注意的事项 ：
+    1. 如果是一个非静态的同步函数的锁 对象是this对象，如果是静态的同步函数的锁 对象是当前函数所属的类的字节码文件（class对象）。
+    2. 同步函数的锁对象是固定的，不能由你来指定 的。
+
+
+推荐使用： 同步代码块。
+    原因：
+        1. 同步代码块的锁对象可以由我们随意指定，方便控制。同步函数的锁对象是固定 的，不能由我们来指定。
+        2. 同步代码块可以很方便控制需要被同步代码的范围，同步函数必须是整个函数 的所有代码都被同步了。
+</code></pre><ol start="32">
+<li>集合：集合是存储对象数据的集合容器。&lt;接口&gt;</li>
+</ol>
+<p>集合比数组的优势：</p>
+<pre><code>1. 集合可以存储任意类型的对象数据，数组只能存储同一种数据类型 的数据。
+2. 集合的长度是会发生变化的，数组的长度是固定的。
+</code></pre><p>——-| Collection  单例集合的跟接口。<br> ———-| List  如果是实现了List接口的集合类，具备的特点： 有序，可重复。<br> ———-| Set   如果是实现了Set接口的集合类，具备特点： 无序，不可重复。</p>
+<p>Collection接口中的方法：</p>
+<pre><code>增加
+    add(E e)  返回布尔值，添加成功返回true，失败返回false.
+    addAll(Collection c)  把一个集合 的元素添加到另外一个集合中去。
+
+删除
+    clear() 
+    remove(Object o) （若o是重复元素，只删除第一个）
+
+    removeAll(Collection  c) （删除调用者中与另一集合的交集元素）
+    retainAll(Collection  c) 保留调用者中与另一集合的交集元素）
+
+查看
+    size() 
+
+
+判断
+    isEmpty() 
+    contains(Object o) 其实contains方法内部是依赖于equals方法进行比较的。
+    containsAll(Collection&lt;?&gt; c) 
+
+迭代
+    toArray() 
+    iterator()     
+</code></pre><p>个人总结：在String类中，重写了equals方法，因此是比较两个字符串的内容        </p>
+<ol start="33">
+<li><p>使用ArrayList无参的构造，函数创建一个对象时，默认的容量是多少？如果长度不够使用时又自增增长多少？<br>ArrayList底层是维护了一个Object数组实现的，使用无参构造函数时，Object数组默认的容量是10，当长度不够的时候，自动增长0.5倍。</p>
+</li>
+<li><p>说出ArrayLsit与Vector的区别?<br>相同点： ArrayList与Vector底层都是使用了Object数组实现的。</p>
+<p>不同点： </p>
+<pre><code>1. ArrayList是线程不同步的，操作效率高。 
+   Vector是线程同步的，操作效率低。
+2. ArrayList是JDK1.2出现，Vector是jdk1.0的时候出现的。
+</code></pre></li>
+<li><p>hashSet的实现原理：<br>往Haset添加元素的时候，HashSet会先调用元素的hashCode方法得到元素的哈希值 ，<br>然后通过元素 的哈希值经过移位等运算，就可以算出该元素在哈希表中 的存储位置。</p>
+<p>情况1： 如果算出元素存储的位置目前没有任何元素存储，那么该元素可以直接存储到该位置上。</p>
+<p>情况2： 如果算出该元素的存储位置目前已经存在有其他的元素了，那么会调用该元素的equals方法与该位置的元素再比较一次<br>，如果equals返回的是true，那么该元素与这个位置上的元素就视为重复元素，不允许添加，如果equals方法返回的是false，那么该元素运行 添加。</p>
+</li>
+<li><p>HashCode默认情况下表示的是内存地址，String 类已经重写了Object的hashCode方法了。</p>
+<p>注意： 如果两个字符串的内容一致，那么返回的hashCode 码肯定也会一致的。 </p>
+</li>
+<li><p>treeSet要注意的事项：</p>
+<ol>
+<li>往TreeSet添加元素的时候，如果元素本身具备了自然顺序的特性，那么就按照元素自然顺序的特性进行排序存储。</li>
+<li><p>往TreeSet添加元素的时候，如果元素本身不具备自然顺序的特性，那么该元素所属的类必须要实现Comparable接口，把元素<br>的比较规则定义在compareTo(T o)方法上。 </p>
+</li>
+<li><p>如果比较元素的时候，compareTo方法返回 的是0，那么该元素就被视为重复元素，不允许添加.(注意：TreeSet与HashCode、equals方法是没有任何关系。)</p>
+</li>
+<li><p>往TreeSet添加元素的时候, 如果元素本身没有具备自然顺序 的特性，而元素所属的类也没有实现Comparable接口，那么必须要在创建TreeSet的时候传入一个<br>比较器。</p>
+</li>
+<li><p>往TreeSet添加元素的时候，如果元素本身不具备自然顺序的特性，而元素所属的类已经实现了Comparable接口， 在创建TreeSet对象的时候也传入了比较器<br>那么是以比较器的比较规则优先使用。</p>
+</li>
+</ol>
+</li>
+</ol>
+<pre><code>如何自定义定义比较器： 自定义一个类实现Comparator接口即可，把元素与元素之间的比较规则定义在compare方法内即可。
+
+    自定义比较器的格式 ：
+
+        class  类名  implements Comparator{
+
+        }
+
+推荐使用：使用比较器(Comparator)。 
+</code></pre><ol start="38">
+<li>泛型是jdk1.5使用的新特性。</li>
+</ol>
+<p>  泛型的好处：</p>
+<pre><code>1. 将运行时的异常提前至了编译时。
+2. 避免了无谓的强制类型转换 。
+</code></pre><p>泛型在集合中的常见应用：</p>
+<pre><code>ArrayList&lt;String&gt;  list = new ArrayList&lt;String&gt;();  true     推荐使用。
+
+ArrayList&lt;Object&gt;  list = new ArrayList&lt;String&gt;();  false
+ArrayList&lt;String&gt;  list = new ArrayList&lt;Object&gt;();  false
+</code></pre><p>//以下两种写法主要是为了兼顾新老系统的兼用性问题。</p>
+<pre><code>   * 
+ArrayList&lt;String&gt;  list = new ArrayList();           true   
+
+ArrayList    list = new ArrayList&lt;String&gt;();   true   
+</code></pre><p>注意： 泛型没有多态的概念，左右两边的数据 类型必须 要一致，或者只是写一边的泛型类型。</p>
+<p>推荐使用： 两边都写泛型。</p>
+<p>需求： 定义一个方法可以接收任意类型的参数，而且返回值类型必须 要与实参的类型一致。</p>
+<ol start="39">
+<li><p>自定义泛型：  自定义泛型就是一个数据类型的占位符或者是一个数据类型的变量。</p>
+<p> 方法上自定义泛型：</p>
+<pre><code>修饰符      &lt;声明自定义的泛型&gt;返回值类型    函数名(使用自定义泛型 ...){
+
+}
+</code></pre></li>
+</ol>
+<pre><code>在泛型中不能使用基本数据类型，如果需要使用基本数据类型，那么就使用基本数据类型对应的包装类型。
+
+ byte----&gt; Byte
+ short---&gt; Short 
+ int----&gt; Integer
+ long----&gt; Long 
+
+ double ----&gt; Double 
+ float -----&gt; Float
+
+ boolean-----Boolean
+
+ char-------》 Character 
+
+
+ 方法泛型注意的事项：
+     1. 在方法上自定义泛型，这个自定义泛型的具体数据类型是在调用该 方法的时候传入实参时确定具体的数据类型的。
+     2. 自定义泛型只要符合标识符 的命名规则即可, 但是自定义泛型我们一般都习惯使用一个大写字母表示。  T Type  E Element
+</code></pre><ol start="40">
+<li><p>单例集合 的体系：<br>———| Collection 单例集合的根接口<br>————| List  如果是实现了List接口的集合类， 具备的特点：有序，重复。<br>—————| ArraryList  底层 是使用了Object数组实现的，特点： 查询速度快，增删慢。<br>—————| LinkedList 底层是使用了链表数据结构实现 的， 特点： 查询速度慢，增删快。<br>—————| Vector Vector的实现与ArrayList是一致，但是是线程安全 的，操作效率低。 jdk1.0的时候出现的<br>————| Set  如果是实现了Set接口的集合类，具备的特点：无序，不可重复。<br>—————-| HashSet  底层是使用了一个哈希表支持的， 特点：存取速度快。<br>HashSet添加元素的原理：<br>往HashSet添加元素的时候，首先HashSet会调用元素的hashCOde方法得到元素的哈希码值，然后会经过一系列运算<br>就可以算出该元素在哈希表中的存储位置/</p>
+<p>情况1：如果算出该元素的位置目前没有任何元素存储，那么该元素可以直接存储　</p>
+<p>情况2： 如果算出该元素的位置目前已经存有其他的元素，那么还会调用元素的equals方法与该位置的元素再比较一次。<br>如果equals方法返回的是false，那么该元素允许存储，如果euqlas方法返回的是true，那么该元素被视为重复元素，不允许存储。<br>——————| TreeSet  底层是使用了红黑树（二叉树）数据结构实现的， 特点：会对元素进行排序存储。</p>
+</li>
+</ol>
+<p>TreeSet要注意的事项：</p>
+<pre><code>1. 往TreeSet添加元素的时候，如果元素本身具备自然顺序的特性，那么会根据元素自然顺序的特性进行排序存储。
+2. 往TreeSet添加元素的时候，如果元素本身不具备自然顺序的特性，那么元素所属的类必须要实现Comparable接口，把元素的比较规则定义
+在CompareTo方法上。
+3. 往TreeSet添加元素的时候，如果元素本身不具备自然顺序的特性，而且元素所属的类没有实现COmparable接口，那么必须要在创建
+TreeSet对象的时候传入比较器。
+4. 如果比较的方法(CompareTo 或者Compare )返回的是0的时候，那么该元素就被视为重复元素，不允许添加。
+
+比较器的定义格式：  自定义一个类实现COmparator接口即可。
+
+    class 类名  implements Comparator{
+
+    }
+</code></pre><p>泛型：泛型是jdk1.5出现的新特性。</p>
+<p>泛型的好处：</p>
+<pre><code>1. 将运行时出现 的问题提前至了编译时。
+2. 避免了无谓强制类型转换。
+</code></pre><p>自定义泛型： 自定义泛型就是一个数据类型的占位符或者理解为一个数据类型的变量。    </p>
+<p>泛型方法:</p>
+<pre><code>修饰符  &lt;声明自定义的泛型&gt;返回值类型  函数名(自定义的泛型  变量名..)
+</code></pre><p>泛型方法要注意的事项： </p>
+<pre><code>1. 泛型方法中 的自定义泛型的具体数据类型是在调用该函数的时候传入实参时确定的。
+2. 自定义泛型所用 的标识符只要符合标识符 的命名规则即可。但是我们一般都习惯使用一个大写字母表示。
+</code></pre><p>泛型类：</p>
+<pre><code>泛型类的定义格式
+
+    class 类名&lt;声明自定义的泛型&gt;{
+
+    }
+</code></pre><p>泛型类要注意的事项：</p>
+<pre><code>1. 泛型类上的自定义泛型是在使用该类创建对象的时候指定具体的数据类型的。
+2. 如果一个类已经自定义了泛型，使用该类创建对象的时候如果没有指定泛型的具体数据类型，那么默认为Object类型。
+3. 静态的函数不能使用类上自定义的泛型，如果静态函数需要使用，必须要在函数上自定义泛型。
+</code></pre><p>泛型接口：</p>
+<pre><code>泛型接口的定义格式：
+
+    interface 接口名&lt;声明自定义的泛型&gt;{
+
+    }
+</code></pre><p>泛型接口要注意事项：</p>
+<pre><code>1. 泛型接口上的自定义泛型是在实现该接口的时候指定具体数据类型的。
+2. 如果实现接口的时候没有指定接口上 的自定义泛型的具体数据类型，那么默认为Object数据类型。
+3. 如果需要在创建接口实现类对象的时候才指定接口上自定义泛型，那么需要以下格式：    class&lt;T&gt; 类名  implements  接口&lt;T&gt;
+</code></pre><p>泛型上下限：</p>
+<pre><code>? super Integer   允许是Integer数据类型或者是Integer父类类型       泛型的下限
+
+
+?  extedns Number  允许是Number数据类型或者是Number子类的数据类型   泛型的上限。
 </code></pre>
       
     </div>
@@ -497,7 +948,7 @@ class Demo5
         <p><span>本文标题:</span><a href="/2018/06/13/Java底层基础容易遗忘知识点总结/">Java底层基础容易遗忘知识点总结</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Virya-Hh</a></p>
         <p><span>发布时间:</span>2018-06-13, 15:18:40</p>
-        <p><span>最后更新:</span>2018-06-14, 11:23:43</p>
+        <p><span>最后更新:</span>2018-07-10, 21:16:55</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2018/06/13/Java底层基础容易遗忘知识点总结/" title="Java底层基础容易遗忘知识点总结">http://yoursite.com/2018/06/13/Java底层基础容易遗忘知识点总结/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2018/06/13/Java底层基础容易遗忘知识点总结/　　作者: Virya-Hh" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -511,6 +962,12 @@ class Demo5
 
 
     <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2018/07/02/VS2013-配置OpenCV时，出现的问题/">
+                    VS2013 配置OpenCV时，出现的问题
+                </a>
+            </div>
         
         
             <div id="article-nav-older" class="article-nav-title">
@@ -605,7 +1062,9 @@ class Demo5
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a href="/2018/07/02/VS2013-配置OpenCV时，出现的问题/" title="上一篇: VS2013 配置OpenCV时，出现的问题">
+                <i class="fa fa-angle-left"></i>
+            </a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
@@ -617,7 +1076,7 @@ class Demo5
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/06/13/Java底层基础容易遗忘知识点总结/">Java底层基础容易遗忘知识点总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/31/立体匹配算法总结及研究进展/">立体匹配算法总结及研究进展</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/30/Java中对于字符串的认识/">Java中对于字符串的认识</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/30/关于数据库E-R图及关系模式的认识/">关于数据库E-R图及关系模式的认识</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/28/初探middlebury公开数据集/">初探middlebury公开数据集</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/25/绑定域名出现的问题及解决/">绑定域名出现的问题及解决</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/24/软件测试了解及数据结构练习/">软件测试了解及数据结构练习</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/23/hexo主题配置-yelee/">hexo主题配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/22/MATLAB之GUI界面搭建学习/">MATLAB之GUI界面搭建学习</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/22/github-hexo-个人博客搭建教程（一）（含填坑）/">github+hexo 个人博客搭建教程（一）（含填坑）</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/07/02/VS2013-配置OpenCV时，出现的问题/">VS2013 配置OpenCV时，出现的问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/13/Java底层基础容易遗忘知识点总结/">Java底层基础容易遗忘知识点总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/31/立体匹配算法总结及研究进展/">立体匹配算法总结及研究进展</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/30/Java中对于字符串的认识/">Java中对于字符串的认识</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/30/关于数据库E-R图及关系模式的认识/">关于数据库E-R图及关系模式的认识</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/28/初探middlebury公开数据集/">初探middlebury公开数据集</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/25/绑定域名出现的问题及解决/">绑定域名出现的问题及解决</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/24/软件测试了解及数据结构练习/">软件测试了解及数据结构练习</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/23/hexo主题配置-yelee/">hexo主题配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/22/MATLAB之GUI界面搭建学习/">MATLAB之GUI界面搭建学习</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/22/github-hexo-个人博客搭建教程（一）（含填坑）/">github+hexo 个人博客搭建教程（一）（含填坑）</a></li></ul>
 
 
 
