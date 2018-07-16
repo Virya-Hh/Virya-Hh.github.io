@@ -23,7 +23,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="jdk/jre的概念及相互之间的关系  jvm=java虚拟机  jre=jvm+核心类库 （jre是Java的运行环境）  jdk=jre+开发工具  （JdkJava 语言的软件开发工具包）  java语言诞生于1995年5月23日  ‘\n’指的的是回车，就是另起一行;’\r’指的的是换行，就是回到一行的开头 布尔值 boolean 当声明一个变量时，占用4个字节，当声明一个数组时，每个数">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-10T13:16:55.544Z">
+<meta property="og:updated_time" content="2018-07-16T03:08:52.017Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java底层基础容易遗忘知识点总结">
 <meta name="twitter:description" content="jdk/jre的概念及相互之间的关系  jvm=java虚拟机  jre=jvm+核心类库 （jre是Java的运行环境）  jdk=jre+开发工具  （JdkJava 语言的软件开发工具包）  java语言诞生于1995年5月23日  ‘\n’指的的是回车，就是另起一行;’\r’指的的是换行，就是回到一行的开头 布尔值 boolean 当声明一个变量时，占用4个字节，当声明一个数组时，每个数">
@@ -937,7 +937,122 @@ TreeSet对象的时候传入比较器。
 
 
 ?  extedns Number  允许是Number数据类型或者是Number子类的数据类型   泛型的上限。
-</code></pre>
+</code></pre><ol start="41">
+<li><p>mkdir和 creatNewFile的区别<br>mkdir指的是创建一个文件夹<br>而creatNewFile指的是创建一个文件<br>mkdirs指的是可以创建多级文件夹<br>dir指的是directory 因此指的是文件夹</p>
+</li>
+<li><p>jdk1.5新特性之——-静态导入</p>
+<p> 静态导入的作用： 简化书写。</p>
+<p>静态导入可以作用一个类的所有静态成员。 </p>
+<p> 静态导入的格式：</p>
+<pre><code>import static 包名.类名.静态的成员；
+</code></pre></li>
+</ol>
+<pre><code>静态导入要注意的事项： 
+     1. 如果静态导入的成员与本类的成员存在同名的情况下，那么默认使用本类的静态成员，如果需要指定使用静态导入的成员，那么需要在静态成员前面加上类名
+</code></pre><ol start="43">
+<li><p>jdk1.5出现的新特性—-&gt;增强for循环</p>
+<p>增强for循环的作用： 简化迭代器的书写格式。(注意：增强for循环的底层还是使用了迭代器遍历。)</p>
+<p>增强for循环的适用范围： 如果是实现了Iterable接口的对象或者是数组对象都可以使用增强for循环。</p>
+<p>set 已经实现了iterable接口。。。</p>
+<p>增强for循环的格式：</p>
+<pre><code>for(数据类型  变量名  :遍历的目标){
+
+}
+</code></pre><p>增强for循环要注意的事项：</p>
+<pre><code>1. 增强for循环底层也是使用了迭代器获取的，只不过获取迭代器由jvm完成，不需要我们获取迭代器而已，所以在使用增强for循环变量元素的过程中不准使用集合
+对象对集合的元素个数进行修改。
+
+2. 迭代器遍历元素与增强for循环变量元素的区别：使用迭代器遍历集合的元素时可以删除集合的元素，而增强for循环变量集合的元素时，不能调用迭代器的remove方法删除元素。
+
+3. 普通for循环与增强for循环的区别：普通for循环可以没有变量的目标，而增强for循环一定要有变量的目标。
+</code></pre><p>map没有实现iterable接口，但是可以把map转化为单例集合set&lt;Map.entry&lt;String,String&gt;&gt;</p>
+<ol start="44">
+<li><p>jdk1.5新特性之——-&gt;可变参数</p>
+<p>需求： 定义一个函数做加法功能（函数做几个数据 的加法功能是不确定）。</p>
+<p>可变参数的格式：</p>
+<pre><code>数据类型... 变量名
+</code></pre><p>可变参数要 注意的细节： </p>
+<pre><code>1. 如果一个函数 的形参使用上了可变参数之后，那么调用该方法的时候可以传递参数也可以不传递参数。
+2. 可变参数实际上是一个数组对象。
+3. 可变参数必须位于形参中的最后一个参数。
+4. 一个函数最多只能有一个可变 参数，因为可变参数要位于形参中最后一个位置上。
+</code></pre></li>
+<li><p>jdk1.5新特性之—–枚举</p>
+<p>问题：某些方法所接收的数据必须是在固定范围之内的， </p>
+</li>
+</ol>
+<p>解决方案： 这时候我们的解决方案就是自定义一个类,然后是私有化构造函数，在自定义类中创建本类的对象对外使用。</p>
+<p>jdk1.5对以上问题提出了新的解决方案： 就是使用枚举类解决。</p>
+<p>一些方法在运行时，它需要的数据不能是任意的，而必须是一定范围内的值，Java5以后可以直接使用枚举予以解决。</p>
+<pre><code>比如： 方向 , 性别 、 季节 、 星期......
+</code></pre><ol start="44">
+<li>自动装箱与拆箱</li>
+</ol>
+<p>//集合： 集合是可以存储任意对象类型数据的容器。</p>
+<pre><code>ArrayList list = new ArrayList();
+list.add(1);
+list.add(2);
+list.add(3);
+
+//自动装箱： 自动把java的基本数据类型数据转换成对象类型数据。
+int temp = 10;  //基本数据类型
+Integer b =temp; //把a存储的值赋予给b变量。
+</code></pre></li>
+</ol>
+<pre><code>    //自动拆箱： 把引用类型的数据转换成基本类型的数据
+    Integer c = new Integer(13);
+    int d = c; //
+    System.out.println(d);
+
+45. 枚举：一些方法在运行时，它需要的数据不能是任意的，而必须是一定范围内的值，可以直接使用枚举予以解决。
+
+
+枚举类的定义格式：
+
+    enum 类名{
+        //枚举值
+    }
+
+枚举要注意的细节：
+    1. 枚举类也是一个特殊的类。
+    2. 枚举值默认的修饰符是public static final。
+    3. 枚举值就是是枚举值所属的类的类型， 然后枚举值是指向了本类的对象的。
+    4. 枚举类的构造方法默认的修饰符是private的。
+    5. 枚举类可以定义自己的成员变量与成员函数。
+    6. 枚举类可以自定义构造函数，但是构造函数的修饰符必须是private。
+    7. 枚举类可以存在抽象 的方法，但是枚举值必须要实现抽象 的方法。
+    8. 枚举值必须要位置枚举类 的第一个语句。    
+</code></pre><ol start="45">
+<li><p>switch适用的数据类型： byte \ char \short \ int \ String\枚举类型</p>
+<p> 注意： </p>
+<p> case语句后面跟的枚举值，只需要单写枚举值即可，不需要再声明该 枚举值是属于哪个枚举类的。</p>
+</li>
+<li><p><a href="https://blog.csdn.net/lwang_it/article/details/78886186" target="_blank" rel="noopener">java 字节流与字符流的区别</a></p>
+<p>字节流: 字节流读取得都是文件中二进制数据，读取到二进制数据不会经过任何的处理。</p>
+<p>字符流： 字符流读取的数据是以字符为单位的 。 字符流也是读取文件中的二进制数据，不过会把这些二进制数据转换成我们能 识别的字符。  </p>
+<p>字符流 = 字节流 + 解码</p>
+</li>
+<li><p>——| Writer 输出字符流的基类。 抽象类<br>———–| FileWriter 向文件数据数据的输出字符流</p>
+<p>FileWriter的使用步骤：</p>
+<pre><code>1. 找到目标文件。
+2. 建立数据输出通道
+3. 写出数据。
+4. 关闭资源
+</code></pre><p>FileWriter要注意的事项：</p>
+<pre><code>1. 使用FileWriter写数据的时候，FileWriter内部是维护了一个1024个字符数组的，写数据的时候会先写入到它内部维护的字符数组中，如果需要
+把数据真正写到硬盘上，需要调用flush或者是close方法或者是填满了内部的字符数组。
+2. 使用FileWriter的时候，如果目标文件不存在，那么会自动创建目标文件。
+3.使用FileWriter的时候， 如果目标文件已经存在了，那么默认情况会先情况文件中的数据，然后再写入数据 ， 如果需要在原来的基础上追加数据，
+需要使用“new FileWriter(File , boolean)”的构造方法，第二参数为true。
+</code></pre></li>
+</ol>
+<p>总结： 字节流</p>
+<p>输入字节流：<br>———–| InputStream  所有输入字节流的基类  抽象类<br>—————–| FileInputStream 读取文件数据的输入字节流<br>—————–| BufferedInputStream  缓冲输入字符流       该类出现的目的是为了提高读取文件 数据的效率。 这个类其实只不过是在内部维护了一个8kb的字节数组而已。</p>
+<p>输出字节流：<br>———–| OutputStream 所有输出字节流的基类。  抽象类。<br>—————-| FileOutputStream 向文件输出数据的输出字节流<br>—————-| BufferedOutputStream 缓冲输出字节流   该类出现的目的也是为了提高向文件写数据的效率。 这个类的也只不过是在内部维护了一个8kb的字节数组而已。</p>
+<p>字符流 :  字符流 = 字节流  + 编码（解码）</p>
+<p>输入字符流:<br>———| Reader   所有输入字符流的基类。  抽象类。<br>—————-| FileReader 读取文件数据的输入字符流。<br>—————-| BufferedReader 缓冲输入字符流           该类出现的目的是为了提高读取文件数据的效率与拓展FileReader的(readLine)功能。  这个类的也只不过是在内部维护了一个8kb的字符数组而已。</p>
+<p>输出字符流:<br>———| Writer 所有输出字符流的基类。  抽象类<br>—————-| FileWriter 向文件输出数据的输出字符流<br>—————-| BufferedWriter 缓冲输出字符流        该类出现的目的是为了提高写文件数据的效率与拓展FileWriter的(newLine)功能.</p>
+
       
     </div>
     
@@ -948,7 +1063,7 @@ TreeSet对象的时候传入比较器。
         <p><span>本文标题:</span><a href="/2018/06/13/Java底层基础容易遗忘知识点总结/">Java底层基础容易遗忘知识点总结</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Virya-Hh</a></p>
         <p><span>发布时间:</span>2018-06-13, 15:18:40</p>
-        <p><span>最后更新:</span>2018-07-10, 21:16:55</p>
+        <p><span>最后更新:</span>2018-07-16, 11:08:52</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2018/06/13/Java底层基础容易遗忘知识点总结/" title="Java底层基础容易遗忘知识点总结">http://yoursite.com/2018/06/13/Java底层基础容易遗忘知识点总结/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2018/06/13/Java底层基础容易遗忘知识点总结/　　作者: Virya-Hh" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
