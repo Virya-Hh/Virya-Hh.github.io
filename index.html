@@ -185,7 +185,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gui/">gui</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/matlab/">matlab</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习心得/">学习心得</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习心得，Java/">学习心得，Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/环境配置/">环境配置</a></li></ul>
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gui/">gui</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/matlab/">matlab</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/华为题库/">华为题库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习心得/">学习心得</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习心得，Java/">学习心得，Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/环境配置/">环境配置</a></li></ul>
                     </div>
                 </section>
                 
@@ -263,6 +263,104 @@
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-字符串最后一个单词的长度" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/09/10/字符串最后一个单词的长度/" class="article-date">
+      <time datetime="2018-09-10T06:52:01.000Z" itemprop="datePublished">2018-09-10</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/10/字符串最后一个单词的长度/">字符串最后一个单词的长度</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>思路1：按照空格分割成数组，取最后一个数组元素计算其长度</p>
+<p>思路2：获得最后一个空格的索引，与字符串的长度进行差运算</p>
+<p><strong>注意：</strong>scanner.next() next() 方法遇见第一个有效字符（非空格，非换行符）时，开始扫描，当遇见第一个分隔符或结束符(空格或换行符)时，结束扫描，获取扫描到的内容，即获得第一个扫描到的不含空格、换行符的单个字符串。</p>
+<p>使用nextLine()时，则可以扫描到一行内容并作为一个字符串而被获取到。</p>
+<pre><code>import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner=new Scanner(System.in);
+        while (scanner.hasNext()) {
+            String str=scanner.nextLine();
+            System.out.println(getLength(str));
+        }
+    }
+
+    public static int getLength(String str){
+
+        String[] newStr=str.split(&quot; &quot;);
+        int len=newStr[newStr.length-1].length();
+        return len;
+    }
+
+}
+
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner=new Scanner(System.in);
+        while (scanner.hasNext()) {
+            String str=scanner.nextLine();
+            System.out.println(getLength(str));
+        }
+    }
+
+    public static int getLength(String str){
+        return str.length()-str.lastIndexOf(&quot; &quot;)-1;
+    }
+
+}
+</code></pre>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/华为题库/">华为题库</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-VS2013-配置OpenCV时，出现的问题" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -889,74 +987,6 @@
       
         <p class="article-more-link">
           <a href="/2018/05/23/hexo主题配置-yelee/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-MATLAB之GUI界面搭建学习" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2018/05/22/MATLAB之GUI界面搭建学习/" class="article-date">
-      <time datetime="2018-05-22T09:16:56.000Z" itemprop="datePublished">2018-05-22</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/22/MATLAB之GUI界面搭建学习/">MATLAB之GUI界面搭建学习</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>之前有接触过用C#搭界面，这是第一次接触matlab的界面搭建。为了效率高一点，直接找了一个实例，踏踏实实的从头到尾的实践了一遍，最后完成了自己所需要的界面搭建。<br><a href="https://wenku.baidu.com/view/6b7cb4f102768e9951e738f1.html" target="_blank" rel="noopener">一个实例搞定MATLAB界面编程</a></p>
-<p>总结一下学习到的东西与经验：</p>
-<ol>
-<li>不同的构件的tag很重要！tag的命名一定要有逻辑且清晰，要说明组件的结构与组件。</li>
-<li><p>同一界面不同组件之间的参数传递</p></li></ol>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gui/">gui</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/matlab/">matlab</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2018/05/22/MATLAB之GUI界面搭建学习/#more">阅读全文 >></a>
         </p>
       
       <div class="clearfix"></div>
