@@ -264,6 +264,295 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-初探middlebury公开数据集" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/05/28/初探middlebury公开数据集/" class="article-date">
+      <time datetime="2018-05-28T06:51:59.000Z" itemprop="datePublished">2018-05-28</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/28/初探middlebury公开数据集/">初探middlebury公开数据集</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>最常用的Stereo Datasets有：</p>
+<ol>
+<li><a href="http://vision.middlebury.edu/" target="_blank" rel="noopener">Middlebury</a></li>
+<li><a href="http://www.cvlibs.net/datasets/kitti/eval_scene_flow.php?benchmark=stereo" target="_blank" rel="noopener">KITTI</a><br>我最常使用的是Middlebury，而且纵观近年来做立体匹配的论文，大部分是用该数据集进行测评。因此，在这里总结以下用法：</li>
+</ol>
+<h3 id="查看匹配算法排名"><a href="#查看匹配算法排名" class="headerlink" title="查看匹配算法排名"></a>查看匹配算法排名</h3><p>进入官网之后，选择Middlebury stereo vision page进入立体视觉页面：<br><img src="/2018/05/28/初探middlebury公开数据集/1.jpg" alt="图1"></p>
+<p>点击在线评估<br><img src="/2018/05/28/初探middlebury公开数据集/2.jpg" alt="图2"><br>可以看到version 2.0已经过期，这是由于version2.0只有四张图，对于算法的评估不是很全面准确，因此middlebury开发了version3.0 。<br><img src="/2018/05/28/初探middlebury公开数据集/3.jpg" alt="图3"><br></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习心得/">学习心得</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2018/05/28/初探middlebury公开数据集/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-绑定域名出现的问题及解决" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/05/25/绑定域名出现的问题及解决/" class="article-date">
+      <time datetime="2018-05-25T02:28:04.000Z" itemprop="datePublished">2018-05-25</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/25/绑定域名出现的问题及解决/">绑定域名出现的问题及解决</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p><strong>Question：</strong> 404：There isn’t a GitHub Pages site here.If you’re trying to publish one, read the full documentation to learn how to set up GitHub Pages for your repository, organization, or user account.</p>
+<p><strong>Tinking:</strong></p>
+<pre><code>1. 域名状态：注册宽限期（addPeriod）
+2. DNS非万网DNS，检查是否有影响
+3. 域名与github关联是否有问题
+4. Ping+域名，每次查询IP地址都会发生变化，原因？
+</code></pre><p><strong>Solution:</strong></p>
+<ol>
+<li><p>实验证明，addPeriod状态时，可以正常访问网站。具体说明参考<a href="https://www.icann.org/resources/pages/epp-status-codes-2014-06-16-en#addPeriod" target="_blank" rel="noopener">域名状态解析</a></p>
+</li>
+<li><p>本质上说说没有影响的，只是选择了不同的DNS服务器进行解析，但是用其他的DNS服务器，需要自己去检测时候可以解析，而使用万网的DNS服务器，会自动选择可以解析的服务器，因此最好选用万网DNS。<strong>此处的坑</strong>：修改DNS之后会提醒你去查看whios的DNS信息，若不一致，建议修改为一致的。这里需要时间等待，一般情况下修改完之后隔一段时间<strong>whios</strong>的会进行更新，不要一点开看到不一样就又修改为原来的DNS，这里浪费了很长时间。</p>
+</li>
+<li>不同的时间段，中间的ip地址会有一定的变化，因此在进行解析的时候不要添加A，而是添加CNAME，这样添加的值是网址而不是IP地址。</li></ol>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习心得/">学习心得</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2018/05/25/绑定域名出现的问题及解决/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-软件测试了解及数据结构练习" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/05/24/软件测试了解及数据结构练习/" class="article-date">
+      <time datetime="2018-05-24T00:59:13.000Z" itemprop="datePublished">2018-05-24</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/24/软件测试了解及数据结构练习/">软件测试了解及数据结构练习</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p><a href="https://www.ppkao.com/tiku/13340/" target="_blank" rel="noopener">软件测试工程师在线题库及考试试题</a></p>
+<h2 id="腾讯测试工程师笔试"><a href="#腾讯测试工程师笔试" class="headerlink" title="腾讯测试工程师笔试"></a>腾讯测试工程师笔试</h2><ol>
+<li><p>黑白盒测试的概念性问题<br><strong>黑盒测试</strong> 也称功能测试或者数据驱动测试或规格说明的测试，是从用户观点出发的测试。不考虑内部结构，只知道输入与输出之间的关系或者程序功能需求的情况下，来确定测试用例和推断测试结果的正确性和可操作性。<strong>黑盒测试方法</strong>主要有等价类划分法、边界值分析法、因果图法、错误推测法、综合策略、正交分析法，用于软件的确认测试。<br><strong>白盒测试</strong>也称逻辑驱动测试或者结构测试或基于结构的测试。它依赖于对程序细节的严密检验，针对特定条件和循环集设计测试用例，对软件的逻辑路径进行测试。在程序不同点检验程序的状态，来判断真实情况是否和预期的状态相一致。<strong>白盒测试方法</strong>主要包括逻辑覆盖发法，主要包括语句覆盖、判断覆盖、条件覆盖、判断条件覆盖、条件组合覆盖、路径覆盖</p>
+</li>
+<li><p>提高软件质量和可靠的技术大致可分为两大类：其中一类就是<strong>避开错误技术</strong>，但避开错误技术无法做到完美无缺和觉悟错误，这就需要软件设计能够<strong>容错能力强</strong>。</p>
+</li>
+<li>软件设计包括体系结构设计、接口设计、数据设计和过程设计。</li></ol>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习心得/">学习心得</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2018/05/24/软件测试了解及数据结构练习/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-hexo主题配置-yelee" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/05/23/hexo主题配置-yelee/" class="article-date">
+      <time datetime="2018-05-23T02:25:17.000Z" itemprop="datePublished">2018-05-23</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/23/hexo主题配置-yelee/">hexo主题配置</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p><img src="/2018/05/23/hexo主题配置-yelee/1.jpg" alt="图1"></p>
+<p><a href="http://moxfive.coding.me/yelee/" target="_blank" rel="noopener">Yelee主题使用说明</a></p>
+<p><a href="https://blog.csdn.net/xiangzhihong8/article/details/53355036" target="_blank" rel="noopener">github pages + Hexo + 域名绑定搭建个人博客</a></p>
+<p><strong>今日学习情况：</strong></p>
+<ol>
+<li><p>对于主页换了主题及背景-主题为yelee，感觉配色很适合女孩子。主的要对于yelee的主题使用说明进行了大致的了解。</p>
+</li>
+<li><p>解决了.ssh的问题，在之前的教程中有过这样的错误，每次都是用这个教程，屡试不爽。这个教程是从根本上重新对于ssh密钥进行配置，因此不会有别的错误产生。<a href="https://www.jianshu.com/p/9b67641b5ec7" target="_blank" rel="noopener">关于Hexo部署文章时出现的问题-SSH</a></p>
+</li>
+<li><p>域名配置仍旧没有实现，进行了用户验证但是注册局设置暂停解析(serverHold），需要填写工号单进行解决。过程中预约了人工服务，由于中间的舞蹈排练，没有进行咨询。明天需要继续解决这个问题。</p></li></ol>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习心得/">学习心得</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2018/05/23/hexo主题配置-yelee/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-MATLAB之GUI界面搭建学习" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
