@@ -15,18 +15,18 @@
 
 
 
-<meta name="description" content="题目描述写出一个程序，接受一个十六进制的数值字符串，输出该数值的十进制字符串。（多组同时输入 ） 输入描述:输入一个十六进制的数值字符串。 输出描述:输出该数值的十进制字符串。 思路：需要注意的是：  进制转换的时候是从右到左进行计算，因此在取字符串的字符的时候需要从右到左  注意大小写  需要对字符串进行遍历的时候不是一定要转换为数组的，可以用charAt进行选取">
+<meta name="description" content="题目描述写出一个程序，接受一个十六进制的数值字符串，输出该数值的十进制字符串。（多组同时输入 ） 输入描述:输入一个十六进制的数值字符串。 输出描述:输出该数值的十进制字符串。 思路–需要注意的是：">
 <meta name="keywords" content="华为题库">
 <meta property="og:type" content="article">
 <meta property="og:title" content="进制转换">
 <meta property="og:url" content="http://yoursite.com/2018/09/11/进制转换/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="题目描述写出一个程序，接受一个十六进制的数值字符串，输出该数值的十进制字符串。（多组同时输入 ） 输入描述:输入一个十六进制的数值字符串。 输出描述:输出该数值的十进制字符串。 思路：需要注意的是：  进制转换的时候是从右到左进行计算，因此在取字符串的字符的时候需要从右到左  注意大小写  需要对字符串进行遍历的时候不是一定要转换为数组的，可以用charAt进行选取">
+<meta property="og:description" content="题目描述写出一个程序，接受一个十六进制的数值字符串，输出该数值的十进制字符串。（多组同时输入 ） 输入描述:输入一个十六进制的数值字符串。 输出描述:输出该数值的十进制字符串。 思路–需要注意的是：">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-11T09:36:09.418Z">
+<meta property="og:updated_time" content="2018-09-12T07:11:58.289Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="进制转换">
-<meta name="twitter:description" content="题目描述写出一个程序，接受一个十六进制的数值字符串，输出该数值的十进制字符串。（多组同时输入 ） 输入描述:输入一个十六进制的数值字符串。 输出描述:输出该数值的十进制字符串。 思路：需要注意的是：  进制转换的时候是从右到左进行计算，因此在取字符串的字符的时候需要从右到左  注意大小写  需要对字符串进行遍历的时候不是一定要转换为数组的，可以用charAt进行选取">
+<meta name="twitter:description" content="题目描述写出一个程序，接受一个十六进制的数值字符串，输出该数值的十进制字符串。（多组同时输入 ） 输入描述:输入一个十六进制的数值字符串。 输出描述:输出该数值的十进制字符串。 思路–需要注意的是：">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -185,7 +185,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gui/">gui</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/matlab/">matlab</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/华为题库/">华为题库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习心得/">学习心得</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习心得，Java/">学习心得，Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/环境配置/">环境配置</a></li></ul>
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gui/">gui</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/matlab/">matlab</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/华为机试/">华为机试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/华为题库/">华为题库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习心得/">学习心得</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习心得，Java/">学习心得，Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/环境配置/">环境配置</a></li></ul>
                     </div>
                 </section>
                 
@@ -305,14 +305,15 @@
         <p>题目描述<br>写出一个程序，接受一个十六进制的数值字符串，输出该数值的十进制字符串。（多组同时输入 ）</p>
 <p>输入描述:<br>输入一个十六进制的数值字符串。</p>
 <p>输出描述:<br>输出该数值的十进制字符串。</p>
-<p>思路：<br>需要注意的是：</p>
+<p>思路–需要注意的是：</p>
+<a id="more"></a>
 <ol>
 <li><p>进制转换的时候是从右到左进行计算，因此在取字符串的字符的时候需要从右到左</p>
 </li>
 <li><p>注意大小写</p>
 </li>
 <li><p>需要对字符串进行遍历的时候不是一定要转换为数组的，可以用charAt进行选取</p>
-<a id="more"></a>
+<!-- more -->
 <p> import java.util.Scanner;</p>
 <p> public class Main {</p>
 <pre><code>public static void main(String[] args) {
@@ -362,7 +363,7 @@ public static int convert(String str){
         <p><span>本文标题:</span><a href="/2018/09/11/进制转换/">进制转换</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Virya-Hh</a></p>
         <p><span>发布时间:</span>2018-09-11, 16:56:51</p>
-        <p><span>最后更新:</span>2018-09-11, 17:36:09</p>
+        <p><span>最后更新:</span>2018-09-12, 15:11:58</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2018/09/11/进制转换/" title="进制转换">http://yoursite.com/2018/09/11/进制转换/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2018/09/11/进制转换/　　作者: Virya-Hh" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -376,6 +377,12 @@ public static int convert(String str){
 
 
     <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2018/09/12/质数因子/">
+                    质数因子
+                </a>
+            </div>
         
         
             <div id="article-nav-older" class="article-nav-title">
@@ -470,7 +477,9 @@ public static int convert(String str){
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a href="/2018/09/12/质数因子/" title="上一篇: 质数因子">
+                <i class="fa fa-angle-left"></i>
+            </a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
@@ -482,7 +491,7 @@ public static int convert(String str){
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/09/11/进制转换/">进制转换</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/11/字符串分割/">字符串分割</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/10/明明的随机数/">明明的随机数</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/10/计算字符个数/">计算字符个数</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/10/字符串最后一个单词的长度/">字符串最后一个单词的长度</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/02/VS2013-配置OpenCV时，出现的问题/">VS2013 配置OpenCV时，出现的问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/13/Java底层基础容易遗忘知识点总结/">Java底层基础容易遗忘知识点总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/31/立体匹配算法总结及研究进展/">立体匹配算法总结及研究进展</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/30/Java中对于字符串的认识/">Java中对于字符串的认识</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/30/关于数据库E-R图及关系模式的认识/">关于数据库E-R图及关系模式的认识</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/28/初探middlebury公开数据集/">初探middlebury公开数据集</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/25/绑定域名出现的问题及解决/">绑定域名出现的问题及解决</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/24/软件测试了解及数据结构练习/">软件测试了解及数据结构练习</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/23/hexo主题配置-yelee/">hexo主题配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/22/MATLAB之GUI界面搭建学习/">MATLAB之GUI界面搭建学习</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/22/github-hexo-个人博客搭建教程（一）（含填坑）/">github+hexo 个人博客搭建教程（一）（含填坑）</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/09/12/字符个数统计/">字符个数统计</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/12/提取不重复的数/">提取不重复的数</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/12/合并表记录/">合并表记录</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/12/取近似值/">取近似值</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/12/质数因子/">质数因子</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/11/进制转换/">进制转换</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/11/字符串分割/">字符串分割</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/10/明明的随机数/">明明的随机数</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/10/计算字符个数/">计算字符个数</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/10/字符串最后一个单词的长度/">字符串最后一个单词的长度</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/02/VS2013-配置OpenCV时，出现的问题/">VS2013 配置OpenCV时，出现的问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/13/Java底层基础容易遗忘知识点总结/">Java底层基础容易遗忘知识点总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/31/立体匹配算法总结及研究进展/">立体匹配算法总结及研究进展</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/30/Java中对于字符串的认识/">Java中对于字符串的认识</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/30/关于数据库E-R图及关系模式的认识/">关于数据库E-R图及关系模式的认识</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/28/初探middlebury公开数据集/">初探middlebury公开数据集</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/25/绑定域名出现的问题及解决/">绑定域名出现的问题及解决</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/24/软件测试了解及数据结构练习/">软件测试了解及数据结构练习</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/23/hexo主题配置-yelee/">hexo主题配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/22/MATLAB之GUI界面搭建学习/">MATLAB之GUI界面搭建学习</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/22/github-hexo-个人博客搭建教程（一）（含填坑）/">github+hexo 个人博客搭建教程（一）（含填坑）</a></li></ul>
 
 
 
