@@ -15,14 +15,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="tags">
-<meta property="og:url" content="http://yoursite.com/tags/index.html">
+<meta name="description" content="anaconda3环境下安装caffe   conda install -c anaconda caffe-gpu    Question：由于网络连接问题，部分包没有下载成功Answer:  1. 查看下载的包的位置，卸载掉重新安装 通过 ls –full-time 来查看该路径下所有文件的最后修改时间进行判断 2. 修改命令为： conda install anaconda caffe-gp">
+<meta name="keywords" content="科研">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ubuntu 16.04 配置caffe遇到的问题">
+<meta property="og:url" content="http://yoursite.com/2018/10/18/ubuntu-16-04-配置caffe遇到的问题/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="anaconda3环境下安装caffe   conda install -c anaconda caffe-gpu    Question：由于网络连接问题，部分包没有下载成功Answer:  1. 查看下载的包的位置，卸载掉重新安装 通过 ls –full-time 来查看该路径下所有文件的最后修改时间进行判断 2. 修改命令为： conda install anaconda caffe-gp">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-23T02:56:22.842Z">
+<meta property="og:updated_time" content="2018-10-18T07:24:27.416Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="tags">
+<meta name="twitter:title" content="ubuntu 16.04 配置caffe遇到的问题">
+<meta name="twitter:description" content="anaconda3环境下安装caffe   conda install -c anaconda caffe-gpu    Question：由于网络连接问题，部分包没有下载成功Answer:  1. 查看下载的包的位置，卸载掉重新安装 通过 ls –full-time 来查看该路径下所有文件的最后修改时间进行判断 2. 修改命令为： conda install anaconda caffe-gp">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -54,7 +58,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>tags | Hexo</title>
+<title>ubuntu 16.04 配置caffe遇到的问题 | Hexo</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -64,7 +68,7 @@
         fancybox: true,
         animate: true,
         isHome: false,
-        isPost: false,
+        isPost: true,
         isArchive: false,
         isTag: false,
         isCategory: false,
@@ -258,11 +262,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-ubuntu-16-04-配置caffe遇到的问题" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/tags/index.html" class="article-date">
-      <time datetime="2018-05-23T02:56:22.000Z" itemprop="datePublished">2018-05-23</time>
+      <a href="/2018/10/18/ubuntu-16-04-配置caffe遇到的问题/" class="article-date">
+      <time datetime="2018-10-18T07:07:27.000Z" itemprop="datePublished">2018-10-18</time>
 </a>
 
 
@@ -277,7 +281,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      tags
+      ubuntu 16.04 配置caffe遇到的问题
     </h1>
   
 
@@ -287,6 +291,10 @@
         
 
         
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/科研/">科研</a></li></ul>
+    </div>
+
         <div class="clearfix"></div>
       </div>
       
@@ -294,96 +302,79 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-              <style>
-    .article-meta { display: none; }
-    #container .article .article-title { padding-right: 0; }
-    .article-header {
-        padding: 0;
-        padding-top: 26px;
-        border-left: none;
-        text-align: center;
-    }
-    .article-header:hover { border-left: none; }
-    .article-title { font-size: 1.6em }
-    .article-entry hr { margin: 0;}
-    .article-meta,
-    #container .article-info-post.article-info { display: none;}
-    #container .article .article-title { padding: 0; }
-</style>
-
-
-    <!-- Tag Cloud Page -->
-    <hr>
-<br>
-
-
-<p class="count"></p>
-
-<div class="tags">
-    <a href="/tags/github/" style="font-size: 16px; color: #808080">github</a> <a href="/tags/gui/" style="font-size: 16px; color: #808080">gui</a> <a href="/tags/hexo/" style="font-size: 16px; color: #808080">hexo</a> <a href="/tags/matlab/" style="font-size: 16px; color: #808080">matlab</a> <a href="/tags/华为机试/" style="font-size: 16px; color: #808080">华为机试</a> <a href="/tags/华为题库/" style="font-size: 35px; color: #000">华为题库</a> <a href="/tags/学习心得/" style="font-size: 28.67px; color: #2b2b2b">学习心得</a> <a href="/tags/学习心得，Java/" style="font-size: 22.33px; color: #555">学习心得，Java</a> <a href="/tags/环境配置/" style="font-size: 16px; color: #808080">环境配置</a> <a href="/tags/科研/" style="font-size: 16px; color: #808080">科研</a>
-</div>
-<style>
-    .category-list li{
-        display: inline-block;
-        margin: 0 1em .5em 0;
-        padding: 4px;
-        border: 1px solid lightgray;
-        font-size: 1.2rem;
-    }
-    .category-list a { color: gray; }
-    .category-list-item:hover a {
-        color: gray;
-        text-decoration: none;
-    }
-    .category-list-count {
-        margin-left: 2px;
-        font-size: .9rem;
-    }
-    .article-entry ul li:before{ display: none; }
-    .article-inner { text-align: center; }
-    .tags {
-        max-width: 42em;
-        margin: 2em auto;
-        margin-top: 0em;
-    }
-    .tags a {
-        margin-right: 1em;
-        line-height: 65px;
-        border-bottom: 1px solid gray;
-        white-space: nowrap;
-        transition: border-bottom .5s;
-    }
-    .tags a:hover {
-        border-bottom: 3px dotted gray;
-        text-decoration: none;
-    }
-    #count > span {
-        margin: auto .2em;
-        font-weight: bold;
-    }
-</style>
-
-<!-- Count tags and categories -->
-<p id="count">
-        已有<span><script>document.write($(".category-list-item").length)</script></span>个分类，
-        共计<span><script>document.write($(".tags > a").length)</script></span>个标签
-</p>
-<script>
-    $('#count').appendTo('.count');
-</script>
-
-          
-        
+        <ol>
+<li><p>anaconda3环境下安装caffe </p>
+<ol>
+<li>conda install -c anaconda caffe-gpu</li>
+</ol>
+</li>
+</ol>
+<p>Question：由于网络连接问题，部分包没有下载成功<br>Answer: </p>
+<pre><code>1. 查看下载的包的位置，卸载掉重新安装
+</code></pre><p>通过 ls –full-time 来查看该路径下所有文件的最后修改时间进行判断</p>
+<pre><code>2. 修改命令为：
+conda install anaconda caffe-gpu
+</code></pre><p>   原因不清楚，但是成功了！</p>
+<a id="more"></a>
       
     </div>
     
   </div>
   
     
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2018/10/18/ubuntu-16-04-配置caffe遇到的问题/">ubuntu 16.04 配置caffe遇到的问题</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">Virya-Hh</a></p>
+        <p><span>发布时间:</span>2018-10-18, 15:07:27</p>
+        <p><span>最后更新:</span>2018-10-18, 15:24:27</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2018/10/18/ubuntu-16-04-配置caffe遇到的问题/" title="ubuntu 16.04 配置caffe遇到的问题">http://yoursite.com/2018/10/18/ubuntu-16-04-配置caffe遇到的问题/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2018/10/18/ubuntu-16-04-配置caffe遇到的问题/　　作者: Virya-Hh" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
 
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2018/09/12/字符个数统计/">
+                    字符个数统计
+                </a>
+            </div>
+        
+    </nav>
 
   
 </article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
 
 
 
@@ -401,7 +392,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"tags　| Hexo　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"ubuntu 16.04 配置caffe遇到的问题　| Hexo　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -420,8 +411,8 @@
     <div id="disqus_thread"></div>
     <script>
         var disqus_config = function(){
-            this.page.url = 'http://yoursite.com/tags/index.html';
-            this.page.identifier = 'tags/index.html';
+            this.page.url = 'http://yoursite.com/2018/10/18/ubuntu-16-04-配置caffe遇到的问题/';
+            this.page.identifier = '2018/10/18/ubuntu-16-04-配置caffe遇到的问题/';
         };
         var loadComment = function(){
             var d = document, s = d.createElement('script');
@@ -438,6 +429,24 @@
 
     
 
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2018/09/12/字符个数统计/" title="下一篇: 字符个数统计">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/10/18/ubuntu-16-04-配置caffe遇到的问题/">ubuntu 16.04 配置caffe遇到的问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/12/字符个数统计/">字符个数统计</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/12/提取不重复的数/">提取不重复的数</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/12/合并表记录/">合并表记录</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/12/取近似值/">取近似值</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/12/质数因子/">质数因子</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/11/进制转换/">进制转换</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/11/字符串分割/">字符串分割</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/10/明明的随机数/">明明的随机数</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/10/计算字符个数/">计算字符个数</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/10/字符串最后一个单词的长度/">字符串最后一个单词的长度</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/02/VS2013-配置OpenCV时，出现的问题/">VS2013 配置OpenCV时，出现的问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/13/Java底层基础容易遗忘知识点总结/">Java底层基础容易遗忘知识点总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/31/立体匹配算法总结及研究进展/">立体匹配算法总结及研究进展</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/30/Java中对于字符串的认识/">Java中对于字符串的认识</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/30/关于数据库E-R图及关系模式的认识/">关于数据库E-R图及关系模式的认识</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/28/初探middlebury公开数据集/">初探middlebury公开数据集</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/25/绑定域名出现的问题及解决/">绑定域名出现的问题及解决</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/24/软件测试了解及数据结构练习/">软件测试了解及数据结构练习</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/23/hexo主题配置-yelee/">hexo主题配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/22/MATLAB之GUI界面搭建学习/">MATLAB之GUI界面搭建学习</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/22/github-hexo-个人博客搭建教程（一）（含填坑）/">github+hexo 个人博客搭建教程（一）（含填坑）</a></li></ul>
 
 
 

@@ -185,7 +185,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gui/">gui</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/matlab/">matlab</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/华为机试/">华为机试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/华为题库/">华为题库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习心得/">学习心得</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习心得，Java/">学习心得，Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/环境配置/">环境配置</a></li></ul>
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gui/">gui</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/matlab/">matlab</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/华为机试/">华为机试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/华为题库/">华为题库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习心得/">学习心得</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习心得，Java/">学习心得，Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/环境配置/">环境配置</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/科研/">科研</a></li></ul>
                     </div>
                 </section>
                 
@@ -263,6 +263,82 @@
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-ubuntu-16-04-配置caffe遇到的问题" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/10/18/ubuntu-16-04-配置caffe遇到的问题/" class="article-date">
+      <time datetime="2018-10-18T07:07:27.000Z" itemprop="datePublished">2018-10-18</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/10/18/ubuntu-16-04-配置caffe遇到的问题/">ubuntu 16.04 配置caffe遇到的问题</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <ol>
+<li><p>anaconda3环境下安装caffe </p>
+<ol>
+<li>conda install -c anaconda caffe-gpu</li>
+</ol>
+</li>
+</ol>
+<p>Question：由于网络连接问题，部分包没有下载成功<br>Answer: </p>
+<pre><code>1. 查看下载的包的位置，卸载掉重新安装
+</code></pre><p>通过 ls –full-time 来查看该路径下所有文件的最后修改时间进行判断</p>
+<pre><code>2. 修改命令为：
+conda install anaconda caffe-gpu
+</code></pre><p>   原因不清楚，但是成功了！</p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/科研/">科研</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2018/10/18/ubuntu-16-04-配置caffe遇到的问题/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-字符个数统计" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -852,72 +928,6 @@
       
         <p class="article-more-link">
           <a href="/2018/09/10/计算字符个数/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-字符串最后一个单词的长度" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2018/09/10/字符串最后一个单词的长度/" class="article-date">
-      <time datetime="2018-09-10T06:52:01.000Z" itemprop="datePublished">2018-09-10</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/09/10/字符串最后一个单词的长度/">字符串最后一个单词的长度</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>思路1：按照空格分割成数组，取最后一个数组元素计算其长度</p>
-<p>思路2：获得最后一个空格的索引，与字符串的长度进行差运算</p>
-<p><strong>注意：</strong>scanner.next() next() 方法遇见第一个有效字符（非空格，非换行符）时，开始扫描，当遇见第一个分隔符或结束符(空格或换行符)时，结束扫描，获取扫描到的内容，即获得第一个扫描到的不含空格、换行符的单个字符串。</p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/华为题库/">华为题库</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2018/09/10/字符串最后一个单词的长度/#more">阅读全文 >></a>
         </p>
       
       <div class="clearfix"></div>
