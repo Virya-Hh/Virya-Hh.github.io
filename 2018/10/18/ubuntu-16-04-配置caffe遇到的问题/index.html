@@ -15,18 +15,18 @@
 
 
 
-<meta name="description" content="在anaconda3环境下安装caffe conda install -c anaconda caffe-gpu  Question:由于网络连接问题，部分包没有下载成功 Solution:  (1)  查看下载的包的位置，卸载掉重新安装通过 ls –full-time 来查看该路径下所有文件的最后修改时间进行判断 (2) 修改命令为：    conda install anaconda caff">
+<meta name="description" content="下载caffe安装包git clone https://github.com/BVLC/caffe.git Question:下载文件并将本地文件复制到远程服务端 scp -r 目录名用户名 root@计算机ip 远程路径由于权限问题失败了，尝试了下一种方法，即在anaconda环境下进行安装">
 <meta name="keywords" content="科研">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ubuntu 16.04 配置caffe遇到的问题">
 <meta property="og:url" content="http://yoursite.com/2018/10/18/ubuntu-16-04-配置caffe遇到的问题/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="在anaconda3环境下安装caffe conda install -c anaconda caffe-gpu  Question:由于网络连接问题，部分包没有下载成功 Solution:  (1)  查看下载的包的位置，卸载掉重新安装通过 ls –full-time 来查看该路径下所有文件的最后修改时间进行判断 (2) 修改命令为：    conda install anaconda caff">
+<meta property="og:description" content="下载caffe安装包git clone https://github.com/BVLC/caffe.git Question:下载文件并将本地文件复制到远程服务端 scp -r 目录名用户名 root@计算机ip 远程路径由于权限问题失败了，尝试了下一种方法，即在anaconda环境下进行安装">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-18T07:38:40.627Z">
+<meta property="og:updated_time" content="2018-10-18T07:44:09.696Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ubuntu 16.04 配置caffe遇到的问题">
-<meta name="twitter:description" content="在anaconda3环境下安装caffe conda install -c anaconda caffe-gpu  Question:由于网络连接问题，部分包没有下载成功 Solution:  (1)  查看下载的包的位置，卸载掉重新安装通过 ls –full-time 来查看该路径下所有文件的最后修改时间进行判断 (2) 修改命令为：    conda install anaconda caff">
+<meta name="twitter:description" content="下载caffe安装包git clone https://github.com/BVLC/caffe.git Question:下载文件并将本地文件复制到远程服务端 scp -r 目录名用户名 root@计算机ip 远程路径由于权限问题失败了，尝试了下一种方法，即在anaconda环境下进行安装">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -302,14 +302,17 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="在anaconda3环境下安装caffe"><a href="#在anaconda3环境下安装caffe" class="headerlink" title="在anaconda3环境下安装caffe"></a>在anaconda3环境下安装caffe</h2><ol>
+        <h2 id="下载caffe安装包"><a href="#下载caffe安装包" class="headerlink" title="下载caffe安装包"></a>下载caffe安装包</h2><p>git clone <a href="https://github.com/BVLC/caffe.git" target="_blank" rel="noopener">https://github.com/BVLC/caffe.git</a></p>
+<p><strong>Question:</strong><br>下载文件并将本地文件复制到远程服务端</p>
+<p>scp -r 目录名用户名 root@计算机ip 远程路径<br>由于权限问题失败了，尝试了下一种方法，即在anaconda环境下进行安装</p>
+<a id="more"></a>
+<h2 id="在anaconda3环境下安装caffe"><a href="#在anaconda3环境下安装caffe" class="headerlink" title="在anaconda3环境下安装caffe"></a>在anaconda3环境下安装caffe</h2><ol>
 <li>conda install -c anaconda caffe-gpu</li>
 </ol>
 <p><strong>Question:</strong>由于网络连接问题，部分包没有下载成功</p>
 <p><strong>Solution:</strong> </p>
 <p>(1)  查看下载的包的位置，卸载掉重新安装<br>通过 ls –full-time 来查看该路径下所有文件的最后修改时间进行判断</p>
 <p>(2) 修改命令为：<br>    conda install anaconda caffe-gpu<br>   原因不清楚，但是成功了！</p>
-<a id="more"></a>
 
       
     </div>
@@ -321,7 +324,7 @@
         <p><span>本文标题:</span><a href="/2018/10/18/ubuntu-16-04-配置caffe遇到的问题/">ubuntu 16.04 配置caffe遇到的问题</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Virya-Hh</a></p>
         <p><span>发布时间:</span>2018-10-18, 15:07:27</p>
-        <p><span>最后更新:</span>2018-10-18, 15:38:40</p>
+        <p><span>最后更新:</span>2018-10-18, 15:44:09</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2018/10/18/ubuntu-16-04-配置caffe遇到的问题/" title="ubuntu 16.04 配置caffe遇到的问题">http://yoursite.com/2018/10/18/ubuntu-16-04-配置caffe遇到的问题/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2018/10/18/ubuntu-16-04-配置caffe遇到的问题/　　作者: Virya-Hh" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -351,7 +354,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#在anaconda3环境下安装caffe"><span class="toc-number">1.</span> <span class="toc-text">在anaconda3环境下安装caffe</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#下载caffe安装包"><span class="toc-number">1.</span> <span class="toc-text">下载caffe安装包</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#在anaconda3环境下安装caffe"><span class="toc-number">2.</span> <span class="toc-text">在anaconda3环境下安装caffe</span></a></li></ol>
         
     </div>
     <style>

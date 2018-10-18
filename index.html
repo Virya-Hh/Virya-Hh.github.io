@@ -293,13 +293,9 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-              <h2 id="在anaconda3环境下安装caffe"><a href="#在anaconda3环境下安装caffe" class="headerlink" title="在anaconda3环境下安装caffe"></a>在anaconda3环境下安装caffe</h2><ol>
-<li>conda install -c anaconda caffe-gpu</li>
-</ol>
-<p><strong>Question:</strong>由于网络连接问题，部分包没有下载成功</p>
-<p><strong>Solution:</strong> </p>
-<p>(1)  查看下载的包的位置，卸载掉重新安装<br>通过 ls –full-time 来查看该路径下所有文件的最后修改时间进行判断</p>
-<p>(2) 修改命令为：<br>    conda install anaconda caffe-gpu<br>   原因不清楚，但是成功了！</p>
+              <h2 id="下载caffe安装包"><a href="#下载caffe安装包" class="headerlink" title="下载caffe安装包"></a>下载caffe安装包</h2><p>git clone <a href="https://github.com/BVLC/caffe.git" target="_blank" rel="noopener">https://github.com/BVLC/caffe.git</a></p>
+<p><strong>Question:</strong><br>下载文件并将本地文件复制到远程服务端</p>
+<p>scp -r 目录名用户名 root@计算机ip 远程路径<br>由于权限问题失败了，尝试了下一种方法，即在anaconda环境下进行安装</p>
           
       
     </div>
