@@ -23,7 +23,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="Pyramid Stereo Matching Network Abstract Depth estimation can be formulated as a supervised learning task (with CNNs) Question:  当前基于图块匹配的Siamese网络的架构，缺少利用环境信息取寻找不适定区域（遮挡区域，弱纹理区域等）对应关系的能力 Solution: pr">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-18T03:41:04.660Z">
+<meta property="og:updated_time" content="2018-11-18T03:42:45.414Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Network论文笔记">
 <meta name="twitter:description" content="Pyramid Stereo Matching Network Abstract Depth estimation can be formulated as a supervised learning task (with CNNs) Question:  当前基于图块匹配的Siamese网络的架构，缺少利用环境信息取寻找不适定区域（遮挡区域，弱纹理区域等）对应关系的能力 Solution: pr">
@@ -311,8 +311,7 @@
 <p> <strong>金字塔池化模块</strong>通过聚合不同尺度和不同位置的环境信息构建匹配代价卷（cost volume）来充分利用全局环境信息。<strong>3D CNN</strong>通过将多个堆叠的沙漏网络（hourglass network）与中间监督(intermediate supervision)结合起来，去调整匹配代价值。</p>
 </li>
 </ol>
-<p>###Intruduction###</p>
-<ol>
+<h3 id="Intruduction"><a href="#Intruduction" class="headerlink" title="Intruduction"></a>Intruduction</h3><ol>
 <li><strong>Quesition:</strong>CNN方法与传统方法相比在速度和准确度方面都取得了重要突破，但他依旧很难在不适定区域（例如遮挡区域，重复纹理区域，弱纹理区域和反光表面等）找到精确的匹配点。仅仅利用不同视角下光照强度的一致性约束已经不足以在不适定区域得到精确的匹配一致性估计了，并且对于弱纹理区域这个约束是完全无效的。所以，部分来自于全局环境信息的支持必须融合到立体匹配过程中。</li>
 <li><p><strong>Current：</strong><br>如何有效的利用环境信息。一些研究试图结合语义信息去大量的优化匹配代价值和视差图。</p>
 <p> 1.Displets方法利用车辆的3D模型信息去解决匹配中有歧义的点。2.ResMatchNet学习去计算视差图的反射置信度（reflective confidence）来提高不适定区域的表现。<br> 3.GC-Net采用编码解码结构（encoder-decoder architecture）混合多尺度的特征信息去调整匹配代价卷。<br>3.<strong>Proposed:</strong><br>在本文中，我们提出一个全新的金字塔立体匹配网络（PSMNet）在立体匹配过程中利用全局环境信息。<strong>空间金字塔池化</strong>（SPP）和<strong>空洞卷积</strong>（dilated convolution）用来扩大感受野。通过这个方法，PSMNet将像素级别的特征拓展到包含不同尺度感受野的区域级别的特征，将全局和局部特征信息结合起来构成匹配代价值以获得更加可靠的视差估计值。除此之外，本文还设计了一个结合了中间监督的堆叠沙漏3D卷积神经网络去调整匹配代价卷（类似传统算法中的代价聚合过程）。这个堆叠的沙漏3D-CNN重复进行由精到粗再由粗到精（top-down/bottom-up）的过程来提高对全局信息的利用程度。</p>
@@ -324,8 +323,7 @@
 </ol>
 </li>
 </ol>
-<p>###Related Work###</p>
-
+<h3 id="Related-Work"><a href="#Related-Work" class="headerlink" title="Related Work"></a>Related Work</h3>
       
     </div>
     
@@ -336,7 +334,7 @@
         <p><span>本文标题:</span><a href="/2018/11/18/Network论文笔记/">Network论文笔记</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Virya-Hh</a></p>
         <p><span>发布时间:</span>2018-11-18, 11:01:53</p>
-        <p><span>最后更新:</span>2018-11-18, 11:41:04</p>
+        <p><span>最后更新:</span>2018-11-18, 11:42:45</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2018/11/18/Network论文笔记/" title="Network论文笔记">http://yoursite.com/2018/11/18/Network论文笔记/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2018/11/18/Network论文笔记/　　作者: Virya-Hh" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -366,7 +364,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Abstract"><span class="toc-number">1.</span> <span class="toc-text">Abstract</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Abstract"><span class="toc-number">1.</span> <span class="toc-text">Abstract</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Intruduction"><span class="toc-number">2.</span> <span class="toc-text">Intruduction</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Related-Work"><span class="toc-number">3.</span> <span class="toc-text">Related Work</span></a></li></ol>
         
     </div>
     <style>
