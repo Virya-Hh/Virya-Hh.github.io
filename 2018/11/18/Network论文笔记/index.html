@@ -15,18 +15,18 @@
 
 
 
-<meta name="description" content="写出一个程序，接受一个正浮点数值，输出该数值的近似整数值。如果小数点后数值大于等于5,向上取整；小于5，则向下取整。 输入描述:输入一个正浮点数值 输出描述:输出该数值的近似整数值 补充：">
-<meta name="keywords" content="华为题库">
+<meta name="description" content="Pyramid Stereo Matching Network Abstract Depth estimation can be formulated as a supervised learning task (with CNNs) Question:  当前基于图块匹配的Siamese网络的架构，缺少利用环境信息取寻找不适定区域（遮挡区域，弱纹理区域等）对应关系的能力 Solution: pr">
+<meta name="keywords" content="科研">
 <meta property="og:type" content="article">
-<meta property="og:title" content="取近似值">
-<meta property="og:url" content="http://yoursite.com/2018/09/12/取近似值/index.html">
+<meta property="og:title" content="Network论文笔记">
+<meta property="og:url" content="http://yoursite.com/2018/11/18/Network论文笔记/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="写出一个程序，接受一个正浮点数值，输出该数值的近似整数值。如果小数点后数值大于等于5,向上取整；小于5，则向下取整。 输入描述:输入一个正浮点数值 输出描述:输出该数值的近似整数值 补充：">
+<meta property="og:description" content="Pyramid Stereo Matching Network Abstract Depth estimation can be formulated as a supervised learning task (with CNNs) Question:  当前基于图块匹配的Siamese网络的架构，缺少利用环境信息取寻找不适定区域（遮挡区域，弱纹理区域等）对应关系的能力 Solution: pr">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-12T02:50:42.198Z">
+<meta property="og:updated_time" content="2018-11-18T03:41:04.660Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="取近似值">
-<meta name="twitter:description" content="写出一个程序，接受一个正浮点数值，输出该数值的近似整数值。如果小数点后数值大于等于5,向上取整；小于5，则向下取整。 输入描述:输入一个正浮点数值 输出描述:输出该数值的近似整数值 补充：">
+<meta name="twitter:title" content="Network论文笔记">
+<meta name="twitter:description" content="Pyramid Stereo Matching Network Abstract Depth estimation can be formulated as a supervised learning task (with CNNs) Question:  当前基于图块匹配的Siamese网络的架构，缺少利用环境信息取寻找不适定区域（遮挡区域，弱纹理区域等）对应关系的能力 Solution: pr">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -58,7 +58,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>取近似值 | Hexo</title>
+<title>Network论文笔记 | Hexo</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -262,11 +262,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-取近似值" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="pyramid-Network论文笔记" class="article article-type-pyramid" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2018/09/12/取近似值/" class="article-date">
-      <time datetime="2018-09-12T02:36:51.000Z" itemprop="datePublished">2018-09-12</time>
+      <a href="/2018/11/18/Network论文笔记/" class="article-date">
+      <time datetime="2018-11-18T03:01:53.000Z" itemprop="datePublished">2018-11-18</time>
 </a>
 
 
@@ -281,7 +281,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      取近似值
+      Network论文笔记
     </h1>
   
 
@@ -292,7 +292,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/华为题库/">华为题库</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/科研/">科研</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -302,44 +302,30 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>写出一个程序，接受一个正浮点数值，输出该数值的近似整数值。如果小数点后数值大于等于5,向上取整；小于5，则向下取整。</p>
-<p>输入描述:<br>输入一个正浮点数值</p>
-<p>输出描述:<br>输出该数值的近似整数值</p>
-<p>补充：</p>
-<a id="more"></a>
-<p>double 和 float 两者的主要区别如下：</p>
-<p>　　01.在内存中占有的字节数不同</p>
-<p>　　　　单精度浮点数在机内存占4个字节</p>
-<p>　　　　双精度浮点数在机内存占8个字节</p>
-<p>　　02.有效数字位数不同</p>
-<p>　　　　单精度浮点数有效数字8位</p>
-<p>　　　　双精度浮点数有效数字16位</p>
-<p>　　03.数值取值范围</p>
-<p>　　　　单精度浮点数的表示范围：-3.40E+38~3.40E+38</p>
-<p>　　　　双精度浮点数的表示范围：-1.79E+308~-1.79E+308</p>
-<p>　　04.在程序中处理速度不同</p>
-<p>　　一般来说，CPU处理单精度浮点数的速度比处理双精度浮点数快</p>
-<p>如果不声明，默认小数为double类型，所以如果要用float的话，必须进行强转</p>
-<p>　　例如：float  a=1.3; 会编译报错，正确的写法 float a = (float)1.3;或者float a = 1.3f;（f或F都可以不区分大小写）</p>
-<p>思路：主要利用double-int强制转化作为参考；如果差大于0.5 则加1 若小于0.5，则减1 （强转的时候只保留整数部分）</p>
-<pre><code>import java.util.Scanner;
+        <p><a href="https://github.com/JiaRenChang/PSMNet" target="_blank" rel="noopener">Pyramid Stereo Matching Network</a></p>
+<h3 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h3><ol>
+<li>Depth estimation can be formulated as a supervised learning task (with CNNs)</li>
+<li><strong>Question:</strong>  当前基于图块匹配的Siamese网络的架构，缺少利用环境信息取寻找不适定区域（遮挡区域，弱纹理区域等）对应关系的能力</li>
+<li><strong>Solution:</strong> propose PSM Net, a pyramid stereo matching network</li>
+<li><p>PSMNet网络的有两个模块：金字塔池化和3D卷积神经网络。</p>
+<p> <strong>金字塔池化模块</strong>通过聚合不同尺度和不同位置的环境信息构建匹配代价卷（cost volume）来充分利用全局环境信息。<strong>3D CNN</strong>通过将多个堆叠的沙漏网络（hourglass network）与中间监督(intermediate supervision)结合起来，去调整匹配代价值。</p>
+</li>
+</ol>
+<p>###Intruduction###</p>
+<ol>
+<li><strong>Quesition:</strong>CNN方法与传统方法相比在速度和准确度方面都取得了重要突破，但他依旧很难在不适定区域（例如遮挡区域，重复纹理区域，弱纹理区域和反光表面等）找到精确的匹配点。仅仅利用不同视角下光照强度的一致性约束已经不足以在不适定区域得到精确的匹配一致性估计了，并且对于弱纹理区域这个约束是完全无效的。所以，部分来自于全局环境信息的支持必须融合到立体匹配过程中。</li>
+<li><p><strong>Current：</strong><br>如何有效的利用环境信息。一些研究试图结合语义信息去大量的优化匹配代价值和视差图。</p>
+<p> 1.Displets方法利用车辆的3D模型信息去解决匹配中有歧义的点。2.ResMatchNet学习去计算视差图的反射置信度（reflective confidence）来提高不适定区域的表现。<br> 3.GC-Net采用编码解码结构（encoder-decoder architecture）混合多尺度的特征信息去调整匹配代价卷。<br>3.<strong>Proposed:</strong><br>在本文中，我们提出一个全新的金字塔立体匹配网络（PSMNet）在立体匹配过程中利用全局环境信息。<strong>空间金字塔池化</strong>（SPP）和<strong>空洞卷积</strong>（dilated convolution）用来扩大感受野。通过这个方法，PSMNet将像素级别的特征拓展到包含不同尺度感受野的区域级别的特征，将全局和局部特征信息结合起来构成匹配代价值以获得更加可靠的视差估计值。除此之外，本文还设计了一个结合了中间监督的堆叠沙漏3D卷积神经网络去调整匹配代价卷（类似传统算法中的代价聚合过程）。这个堆叠的沙漏3D-CNN重复进行由精到粗再由粗到精（top-down/bottom-up）的过程来提高对全局信息的利用程度。</p>
+<p> 本文的主要贡献如下：</p>
+<ol>
+<li>本文提出了一个端到端的学习框架来进行立体匹配，不用任何的后处理过程</li>
+<li>本文引入了金字塔池化模块将全局环境信息结合到图像特征中（代价计算）</li>
+<li>本文提出一个堆叠的沙漏3D CNN来扩展匹配代价卷中的环境信息支持（代价聚合）</li>
+</ol>
+</li>
+</ol>
+<p>###Related Work###</p>
 
-public class Main {
-
-    public static void main(String[] args) {
-        Scanner scanner=new Scanner(System.in);
-        double d=scanner.nextDouble();
-        int result=getReturn(d);
-        System.out.println(result);
-        }
-    public static int getReturn(double d){
-        int temp=(int) d;
-        return d-temp&gt;=0.5? temp+1:temp;
-    }
-
-
-}
-</code></pre>
       
     </div>
     
@@ -347,13 +333,13 @@ public class Main {
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2018/09/12/取近似值/">取近似值</a></p>
+        <p><span>本文标题:</span><a href="/2018/11/18/Network论文笔记/">Network论文笔记</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Virya-Hh</a></p>
-        <p><span>发布时间:</span>2018-09-12, 10:36:51</p>
-        <p><span>最后更新:</span>2018-09-12, 10:50:42</p>
+        <p><span>发布时间:</span>2018-11-18, 11:01:53</p>
+        <p><span>最后更新:</span>2018-11-18, 11:41:04</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2018/09/12/取近似值/" title="取近似值">http://yoursite.com/2018/09/12/取近似值/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2018/09/12/取近似值/　　作者: Virya-Hh" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2018/11/18/Network论文笔记/" title="Network论文笔记">http://yoursite.com/2018/11/18/Network论文笔记/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2018/11/18/Network论文笔记/　　作者: Virya-Hh" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -365,16 +351,10 @@ public class Main {
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2018/09/12/合并表记录/">
-                    合并表记录
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2018/09/12/质数因子/">
-                    质数因子
+                <a href="/2018/11/05/java基础课程实践回顾/">
+                    java基础课程实践回顾
                 </a>
             </div>
         
@@ -386,7 +366,7 @@ public class Main {
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Abstract"><span class="toc-number">1.</span> <span class="toc-text">Abstract</span></a></li></ol>
         
     </div>
     <style>
@@ -422,7 +402,7 @@ public class Main {
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"取近似值　| Hexo　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"Network论文笔记　| Hexo　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -441,8 +421,8 @@ public class Main {
     <div id="disqus_thread"></div>
     <script>
         var disqus_config = function(){
-            this.page.url = 'http://yoursite.com/2018/09/12/取近似值/';
-            this.page.identifier = '2018/09/12/取近似值/';
+            this.page.url = 'http://yoursite.com/2018/11/18/Network论文笔记/';
+            this.page.identifier = '2018/11/18/Network论文笔记/';
         };
         var loadComment = function(){
             var d = document, s = d.createElement('script');
@@ -464,15 +444,13 @@ public class Main {
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2018/09/12/合并表记录/" title="上一篇: 合并表记录">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2018/09/12/质数因子/" title="下一篇: 质数因子">
+            <a href="/2018/11/05/java基础课程实践回顾/" title="下一篇: java基础课程实践回顾">
                 <i class="fa fa-angle-right"></i>
             </a>
         

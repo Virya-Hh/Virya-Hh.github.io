@@ -23,10 +23,13 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="下载caffe安装包git clone https://github.com/BVLC/caffe.git Question:下载文件并将本地文件复制到远程服务端 scp -r 目录名用户名 root@计算机ip 远程路径由于权限问题失败了，尝试了下一种方法，即在anaconda环境下进行安装">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-22T14:42:07.973Z">
+<meta property="og:image" content="http://yoursite.com/2018/10/18/ubuntu-16-04-配置caffe遇到的问题/1.png">
+<meta property="og:image" content="http://yoursite.com/2018/10/18/ubuntu-16-04-配置caffe遇到的问题/2.png">
+<meta property="og:updated_time" content="2018-10-24T11:38:47.509Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ubuntu 16.04 配置caffe遇到的问题">
 <meta name="twitter:description" content="下载caffe安装包git clone https://github.com/BVLC/caffe.git Question:下载文件并将本地文件复制到远程服务端 scp -r 目录名用户名 root@计算机ip 远程路径由于权限问题失败了，尝试了下一种方法，即在anaconda环境下进行安装">
+<meta name="twitter:image" content="http://yoursite.com/2018/10/18/ubuntu-16-04-配置caffe遇到的问题/1.png">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -185,7 +188,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gui/">gui</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/matlab/">matlab</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/华为机试/">华为机试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/华为题库/">华为题库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习心得/">学习心得</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习心得，Java/">学习心得，Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/环境配置/">环境配置</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/科研/">科研</a></li></ul>
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JAVA/">JAVA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gui/">gui</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/matlab/">matlab</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/华为机试/">华为机试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/华为题库/">华为题库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习心得/">学习心得</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习心得，Java/">学习心得，Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/环境配置/">环境配置</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/科研/">科研</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/读书心得/">读书心得</a></li></ul>
                     </div>
                 </section>
                 
@@ -345,6 +348,30 @@
 
 pip3 install torchvision
 </code></pre><p>根据pytorch选择版本后，会出现相应的版本下载的指令，通过查看我们的是Stable–&gt;Linux–&gt;Pip–&gt;Python 3.5–&gt;CUDA8.0,其余的指令可以通过相应选择进行查看。</p>
+<p>相关linux指令补充：</p>
+<ol>
+<li><code>nvidia -smi</code> 查看GPU使用情况</li>
+</ol>
+<h2 id="NVDIA驱动下载"><a href="#NVDIA驱动下载" class="headerlink" title="NVDIA驱动下载"></a>NVDIA驱动下载</h2><p>2.<a href="https://www.nvidia.com/zh-cn/" target="_blank" rel="noopener">下载nvida</a><br> 点击驱动程序下载，进行型号的选择</p>
+<p><img src="/2018/10/18/ubuntu-16-04-配置caffe遇到的问题/1.png" alt="图1"> </p>
+<p>下载完成之后进行安装</p>
+<p>i) <code>dpkg -i nvidia-diag-driver-local-repo-ubuntu1604-384.145_1.0-1_amd64.deb</code>for Ubuntu </p>
+<p>ii) <code>apt-get update</code></p>
+<p>iii) <code>apt-get install cuda-drivers</code> </p>
+<p>iv) <code>reboot</code></p>
+<p><strong>补充：</strong> 如果之前有安装过别的NVDIA,但是需要换驱动的话：</p>
+<ol>
+<li><p>若安装的其他的版本的话<br> sudo apt-get remove –purge nvidia-331-updates</p>
+</li>
+<li><p>若安装的是官方版本的话<br>运行run文件来卸载  <code>sh ./nvidia.run --uninstall</code></p>
+</li>
+</ol>
+<h2 id="CUDA-9-0下载"><a href="#CUDA-9-0下载" class="headerlink" title="CUDA 9.0下载"></a>CUDA 9.0下载</h2><ol>
+<li>不要在清华镜像进行下载，清华镜像下载都是一个库函数不能进行安装</li>
+<li>可以在cuda官网进行下载<br><img src="/2018/10/18/ubuntu-16-04-配置caffe遇到的问题/2.png" alt="图2"> </li>
+</ol>
+<p>Run <code>sudo sh cuda_9.0.176_384.81_linux.run</code></p>
+<p><a href="https://www.cnblogs.com/pertor/p/8733010.html" target="_blank" rel="noopener">CUDA安装教程</a><br>出现问题 geidt 不能使用，最后选用了vim 具体问题有待研究</p>
 
       
     </div>
@@ -356,7 +383,7 @@ pip3 install torchvision
         <p><span>本文标题:</span><a href="/2018/10/18/ubuntu-16-04-配置caffe遇到的问题/">ubuntu 16.04 配置caffe遇到的问题</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Virya-Hh</a></p>
         <p><span>发布时间:</span>2018-10-18, 15:07:27</p>
-        <p><span>最后更新:</span>2018-10-22, 22:42:07</p>
+        <p><span>最后更新:</span>2018-10-24, 19:38:47</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2018/10/18/ubuntu-16-04-配置caffe遇到的问题/" title="ubuntu 16.04 配置caffe遇到的问题">http://yoursite.com/2018/10/18/ubuntu-16-04-配置caffe遇到的问题/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2018/10/18/ubuntu-16-04-配置caffe遇到的问题/　　作者: Virya-Hh" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -370,6 +397,12 @@ pip3 install torchvision
 
 
     <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2018/10/31/相机成像性能测试/">
+                    相机成像性能测试
+                </a>
+            </div>
         
         
             <div id="article-nav-older" class="article-nav-title">
@@ -386,7 +419,7 @@ pip3 install torchvision
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#下载caffe安装包"><span class="toc-number">1.</span> <span class="toc-text">下载caffe安装包</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#在anaconda3环境下安装caffe"><span class="toc-number">2.</span> <span class="toc-text">在anaconda3环境下安装caffe</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#linux-指令总结-2018-10-22"><span class="toc-number">3.</span> <span class="toc-text">linux 指令总结(2018/10/22)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#下载pytorch框架"><span class="toc-number">4.</span> <span class="toc-text">下载pytorch框架</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#下载caffe安装包"><span class="toc-number">1.</span> <span class="toc-text">下载caffe安装包</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#在anaconda3环境下安装caffe"><span class="toc-number">2.</span> <span class="toc-text">在anaconda3环境下安装caffe</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#linux-指令总结-2018-10-22"><span class="toc-number">3.</span> <span class="toc-text">linux 指令总结(2018/10/22)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#下载pytorch框架"><span class="toc-number">4.</span> <span class="toc-text">下载pytorch框架</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#NVDIA驱动下载"><span class="toc-number">5.</span> <span class="toc-text">NVDIA驱动下载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CUDA-9-0下载"><span class="toc-number">6.</span> <span class="toc-text">CUDA 9.0下载</span></a></li></ol>
         
     </div>
     <style>
@@ -464,7 +497,9 @@ pip3 install torchvision
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a href="/2018/10/31/相机成像性能测试/" title="上一篇: 相机成像性能测试">
+                <i class="fa fa-angle-left"></i>
+            </a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
@@ -476,7 +511,7 @@ pip3 install torchvision
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/10/18/ubuntu-16-04-配置caffe遇到的问题/">ubuntu 16.04 配置caffe遇到的问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/12/字符个数统计/">字符个数统计</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/12/提取不重复的数/">提取不重复的数</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/12/合并表记录/">合并表记录</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/12/取近似值/">取近似值</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/12/质数因子/">质数因子</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/11/进制转换/">进制转换</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/11/字符串分割/">字符串分割</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/10/明明的随机数/">明明的随机数</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/10/计算字符个数/">计算字符个数</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/10/字符串最后一个单词的长度/">字符串最后一个单词的长度</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/02/VS2013-配置OpenCV时，出现的问题/">VS2013 配置OpenCV时，出现的问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/13/Java底层基础容易遗忘知识点总结/">Java底层基础容易遗忘知识点总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/31/立体匹配算法总结及研究进展/">立体匹配算法总结及研究进展</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/30/Java中对于字符串的认识/">Java中对于字符串的认识</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/30/关于数据库E-R图及关系模式的认识/">关于数据库E-R图及关系模式的认识</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/28/初探middlebury公开数据集/">初探middlebury公开数据集</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/25/绑定域名出现的问题及解决/">绑定域名出现的问题及解决</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/24/软件测试了解及数据结构练习/">软件测试了解及数据结构练习</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/23/hexo主题配置-yelee/">hexo主题配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/22/MATLAB之GUI界面搭建学习/">MATLAB之GUI界面搭建学习</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/22/github-hexo-个人博客搭建教程（一）（含填坑）/">github+hexo 个人博客搭建教程（一）（含填坑）</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/11/18/Network论文笔记/">Network论文笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/05/java基础课程实践回顾/">java基础课程实践回顾</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/05/Hive-编程指南学习/">Hive 编程指南学习</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/31/相机成像性能测试/">相机成像性能测试</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/18/ubuntu-16-04-配置caffe遇到的问题/">ubuntu 16.04 配置caffe遇到的问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/12/字符个数统计/">字符个数统计</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/12/提取不重复的数/">提取不重复的数</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/12/合并表记录/">合并表记录</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/12/取近似值/">取近似值</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/12/质数因子/">质数因子</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/11/进制转换/">进制转换</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/11/字符串分割/">字符串分割</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/10/明明的随机数/">明明的随机数</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/10/计算字符个数/">计算字符个数</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/10/字符串最后一个单词的长度/">字符串最后一个单词的长度</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/02/VS2013-配置OpenCV时，出现的问题/">VS2013 配置OpenCV时，出现的问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/13/Java底层基础容易遗忘知识点总结/">Java底层基础容易遗忘知识点总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/31/立体匹配算法总结及研究进展/">立体匹配算法总结及研究进展</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/30/Java中对于字符串的认识/">Java中对于字符串的认识</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/30/关于数据库E-R图及关系模式的认识/">关于数据库E-R图及关系模式的认识</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/28/初探middlebury公开数据集/">初探middlebury公开数据集</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/25/绑定域名出现的问题及解决/">绑定域名出现的问题及解决</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/24/软件测试了解及数据结构练习/">软件测试了解及数据结构练习</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/23/hexo主题配置-yelee/">hexo主题配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/22/MATLAB之GUI界面搭建学习/">MATLAB之GUI界面搭建学习</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/22/github-hexo-个人博客搭建教程（一）（含填坑）/">github+hexo 个人博客搭建教程（一）（含填坑）</a></li></ul>
 
 
 
