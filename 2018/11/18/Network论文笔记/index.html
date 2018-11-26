@@ -15,18 +15,22 @@
 
 
 
-<meta name="description" content="Pyramid Stereo Matching Network Abstract Depth estimation can be formulated as a supervised learning task (with CNNs) Question:  当前基于图块匹配的Siamese网络的架构，缺少利用环境信息取寻找不适定区域（遮挡区域，弱纹理区域等）对应关系的能力 Solution: pr">
+<meta name="description" content="Pyramid Stereo Matching Networkcode Abstract Depth estimation can be formulated as a supervised learning task (with CNNs) Question:  当前基于图块匹配的Siamese网络的架构，缺少利用环境信息取寻找不适定区域（遮挡区域，弱纹理区域等）对应关系的能力 Solution">
 <meta name="keywords" content="科研">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Network论文笔记">
 <meta property="og:url" content="http://yoursite.com/2018/11/18/Network论文笔记/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Pyramid Stereo Matching Network Abstract Depth estimation can be formulated as a supervised learning task (with CNNs) Question:  当前基于图块匹配的Siamese网络的架构，缺少利用环境信息取寻找不适定区域（遮挡区域，弱纹理区域等）对应关系的能力 Solution: pr">
+<meta property="og:description" content="Pyramid Stereo Matching Networkcode Abstract Depth estimation can be formulated as a supervised learning task (with CNNs) Question:  当前基于图块匹配的Siamese网络的架构，缺少利用环境信息取寻找不适定区域（遮挡区域，弱纹理区域等）对应关系的能力 Solution">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-18T07:31:22.545Z">
+<meta property="og:image" content="http://yoursite.com/2018/11/18/Network论文笔记/1.png">
+<meta property="og:image" content="http://yoursite.com/2018/11/18/Network论文笔记/2.png">
+<meta property="og:image" content="http://yoursite.com/2018/11/18/Network论文笔记/3.png">
+<meta property="og:updated_time" content="2018-11-18T07:46:38.870Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Network论文笔记">
-<meta name="twitter:description" content="Pyramid Stereo Matching Network Abstract Depth estimation can be formulated as a supervised learning task (with CNNs) Question:  当前基于图块匹配的Siamese网络的架构，缺少利用环境信息取寻找不适定区域（遮挡区域，弱纹理区域等）对应关系的能力 Solution: pr">
+<meta name="twitter:description" content="Pyramid Stereo Matching Networkcode Abstract Depth estimation can be formulated as a supervised learning task (with CNNs) Question:  当前基于图块匹配的Siamese网络的架构，缺少利用环境信息取寻找不适定区域（遮挡区域，弱纹理区域等）对应关系的能力 Solution">
+<meta name="twitter:image" content="http://yoursite.com/2018/11/18/Network论文笔记/1.png">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -185,7 +189,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JAVA/">JAVA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gui/">gui</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/matlab/">matlab</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/华为机试/">华为机试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/华为题库/">华为题库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习心得/">学习心得</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习心得，Java/">学习心得，Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/环境配置/">环境配置</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/科研/">科研</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/读书心得/">读书心得</a></li></ul>
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JAVA/">JAVA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gui/">gui</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/matlab/">matlab</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/华为机试/">华为机试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/华为题库/">华为题库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习心得/">学习心得</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习心得，Java/">学习心得，Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/环境配置/">环境配置</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/科研/">科研</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/读书心得/">读书心得</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/资源/">资源</a></li></ul>
                     </div>
                 </section>
                 
@@ -302,7 +306,7 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p><a href="https://github.com/JiaRenChang/PSMNet" target="_blank" rel="noopener">Pyramid Stereo Matching Network</a></p>
+        <p><a href="https://github.com/JiaRenChang/PSMNet" target="_blank" rel="noopener">Pyramid Stereo Matching Network</a><br><a href="https://github.com/JiaRenChang/PSMNet" target="_blank" rel="noopener">code</a></p>
 <h3 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h3><ol>
 <li>Depth estimation can be formulated as a supervised learning task (with CNNs)</li>
 <li><strong>Question:</strong>  当前基于图块匹配的Siamese网络的架构，缺少利用环境信息取寻找不适定区域（遮挡区域，弱纹理区域等）对应关系的能力</li>
@@ -347,32 +351,27 @@
 <li>Kendall等人介绍了GC-Net网络，一种使用3D卷积去调整匹配代价值的端到端网络。(端到端方法都利用多尺度特征)</li>
 <li>DispNet和CRL都利用了较低层次和较高层次的级联特征（concatenating features）和多层信息(hierarchical information)。</li>
 <li>CRL还使用了多层监督来计算不同分辨率下的视差值。</li>
-<li><p>GC-Net使用编码解码结构去调整匹配代价卷。该方法的核心思想是结合环境信息去减少模糊区域的误匹配情况，进而改善深度估计。</p>
+<li>GC-Net使用编码解码结构去调整匹配代价卷。该方法的核心思想是结合环境信息去减少模糊区域的误匹配情况，进而改善深度估计。</li>
+</ol>
 <p><strong>在语义分割领域，聚合环境信息对于物体分类同样至关重要</strong>。主要有两种利用环境信息的方法：编码解码结构和空间金字塔池化。</p>
 <p><strong>编码解码结构</strong>的核心思想是通过跳跃连接（skip connnection）结合由精到粗再由粗到精的信息。全卷积网络（FCN）是第一个提出聚合由粗到精预测去改善分割结果的算法。U-Net用聚合由粗到精的特征来代替聚合由粗到精的预测，并在分子生物学图像中得到很好的分割结果。更多的研究包括SharpMask，RefineNet和分类优化网络遵循这一核心思想，提出了更加复杂的结构来融合多尺度特征。除此之外，堆叠的多层编码解码结构用于改善特征融合效果，这种结构被命名为沙漏结构(hourglass)。</p>
 <p><strong>金字塔池化</strong>是基于在深层网络中实际的感受野要远小于理论上感受野的尺寸这一现实情况提出来的。ParseNet演示了一种配合FCN的全局池化方法来扩大实际感受野的大小，去在整幅图像水平上提取信息进而改善语义分割的结果。DeepLab v2提出一种神色空间金字塔池化（ASPP）用于将多尺度特征与带有不同放大比率的空洞卷积相结合。PSPNet提出一个金字塔池化模块去优先收集有效的多尺度环境信息。受PSPNet的启发，DeepLab v3提出一种扩展为全局池化的新ASPP模块。<br>相似的空间金字塔思想同样应用在光流环境中。SPyNet介绍了一种图像金字塔按照由粗到精的方式去估算光流。PWCNet利用特征金字塔改善了光流估算效果。</p>
 <p>在本文关于立体匹配的工作中，我们将语义分割研究的经验和在整幅图像的水平上利用全局环境信息的思想结合起来。如下文所述，我们采用多尺度环境信息聚合，通过一个金字塔立体匹配网络完成深度估算。</p>
 </li>
 </ol>
-</li>
-</ol>
-<h3 id="Pyramid-Stereo-Matching-Network"><a href="#Pyramid-Stereo-Matching-Network" class="headerlink" title="Pyramid Stereo Matching Network"></a>Pyramid Stereo Matching Network</h3><h4 id="3-1-Network-Architecture"><a href="#3-1-Network-Architecture" class="headerlink" title="3.1 Network Architecture"></a>3.1 Network Architecture</h4><pre><code>与其他研究中使用较大的7*7卷积核用于第一级卷积层不同，本文采用三个较小的卷积核（3*3）卷积层串联起来构成一个更深层的网络，可以获得同样尺寸的感受野（在VGG中提出）。
+<h3 id="Pyramid-Stereo-Matching-Network"><a href="#Pyramid-Stereo-Matching-Network" class="headerlink" title="Pyramid Stereo Matching Network"></a>Pyramid Stereo Matching Network</h3><h4 id="3-1-Network-Architecture"><a href="#3-1-Network-Architecture" class="headerlink" title="3.1 Network Architecture"></a>3.1 Network Architecture</h4><p>   与其他研究中使用较大的7<em>7卷积核用于第一级卷积层不同，本文采用三个较小的卷积核（3</em>3）卷积层串联起来构成一个更深层的网络，可以获得同样尺寸的感受野（在VGG中提出）。</p>
+<p>   conv1_x,conv2_x,conv3_x,conv4_x是最特征基本的残差块用来学习提取一元特征（unary feature）。对于conv3_x,conv4_x层空洞卷积被用来扩大感受野。输出特征图的大小是输入图像的1/4。SPP模块用于获得环境信息。我们将左右特征图结合成一个匹配代价卷，并把它送入一个3D CNN中进行调整，最后用回归的方法计算视差图。SPP模块，匹配代价卷，3D CNN和视差回归在下面的章节详述。</p>
+<h4 id="3-2-Spatial-Pyramid-Pooling-Module"><a href="#3-2-Spatial-Pyramid-Pooling-Module" class="headerlink" title="3.2 Spatial Pyramid Pooling Module"></a>3.2 Spatial Pyramid Pooling Module</h4><p>   单独从一个像素的强度（灰度或RGB值）很难判断环境关系。因此借助物体的环境信息来丰富图像特征能够有助于一致性估计，尤其对于不适定区域。在本文中，物体（例如汽车）和次级区域（车窗，轮胎等）的关系由SPP模块学习来结合多层级的环境信息。</p>
+<p>   在何凯明的论文中，SPP被设计用来去除CNN中的尺寸约束。由SPP生成的不同级别的特征图被平整后送入全卷积层用于分类，在此之后SPP被用于语义分割问题。ParseNet使用全局平均池化来结合全局环境信息。PSPNet拓展了ParseNet，采用包含不同尺度和次级区域信息的分层全局池化。在PSPNet中，SPP模块使用自适应平均池化把特征压缩到四个尺度上，并紧跟一个1*1的卷积层来减少特征维度，之后低维度的特征图通过双线性插值的方法进行上采样以恢复到原始图片的尺寸。不同级别的特征图都结合成最终的SPP特征图。</p>
+<p>   在本文中，我们为SPP设计了4个尺度的平均池化：64<em>64，32</em>32，16<em>16，8</em>8。并与PSPNet一样，采用了1*1卷积和上采样。在简化模型测试中（ablation study）,我们设计了大量的实验来展示不同级别的特征图的影响，在4.2章详述。</p>
+<h4 id="3-3-Cost-Volume"><a href="#3-3-Cost-Volume" class="headerlink" title="3.3 Cost Volume"></a>3.3 Cost Volume</h4><p>   与使用距离测定方法不同，MC-CNN和GC-Net方法都结合左右图特征使用深层网络来学习匹配代价的估计。跟随GC-Net的方法，我们通过结合左右图中每个视差值对应的特征图，采用SPP特征来构成一个四维的匹配代价卷（高<em>宽</em>视差*特征大小）。</p>
+<h4 id="3-4-3D-CNN"><a href="#3-4-3D-CNN" class="headerlink" title="3.4 3D CNN"></a>3.4 3D CNN</h4><p>   SPP模块通过结合不同级别的特征有助于立体匹配。为了在视差维度和空间维度上聚合特征信息，我们提出两种类型的3D CNN结构来调整匹配代价卷：基础结构和堆叠的沙漏结构。在基础结构中，网络由简单的残差块构成。基础结构包括12个3<em>3</em>3的卷积层。然后我们通过双线性插值的上采样将匹配代价卷的尺寸恢复到H<em>W</em>D。最终，我们利用回归的方式来计算尺寸为H*W的视差图，将在3.5节详述。</p>
+<p>   为了得到更多的环境信息，我们使用一个沙漏（编码解码）结构，由多个重复的带有中间层监督的由精到粗再由粗到精的过程构成。这个堆叠的沙漏结构有三个主要的沙漏网络，每个都会生成一个视差图。这样三个沙漏结构就会由三个输出和三个损失。损失函数在3.6节详述。训练过程中，总的损失是由三个损失值的加权求和得到的。在测试过程中，最终的视差图是由三个输出中的最后一个得到的。在我们的简化模型测试中，我们用基础结构来测试SPP模块的表现，因为基础结构没由通过编码解码结构学习额外的环境信息。</p>
+<h4 id="3-5-Disparity-Regression"><a href="#3-5-Disparity-Regression" class="headerlink" title="3.5 Disparity Regression"></a>3.5 Disparity Regression</h4><p>   我们使用视差回归的方式来估算连续的视差图。根据由softmax操作得到预测代价Cd来计算每一个视差值d的可能性。预测视差值d’由每一个视差值*其对应的可能性求和得到，如下式:</p>
+<p> <img src="/2018/11/18/Network论文笔记/1.png" alt="图1"></p>
+<p>   视差值回归比基于分类的立体匹配方法鲁棒性更强</p>
+<h4 id="3-6-Loss"><a href="#3-6-Loss" class="headerlink" title="3.6 Loss"></a>3.6 Loss</h4><p>   因为视差回归，我们采用了平滑的L1损失函数来训练PSMNet。平滑的L1在物体检测的边缘箱型回归中应用十分广泛，因为它比L2损失函数具有更高的鲁棒性，对于异常点更不敏感。损失函数定义如下：<br> <img src="/2018/11/18/Network论文笔记/2.png" alt="图2"><br> <img src="/2018/11/18/Network论文笔记/3.png" alt="图3"><br>   其中，N是标记的像素的数量，d是真实视差值，d’是预测的视差值。</p>
 
-conv1_x,conv2_x,conv3_x,conv4_x是最特征基本的残差块用来学习提取一元特征（unary feature）。对于conv3_x,conv4_x层空洞卷积被用来扩大感受野。输出特征图的大小是输入图像的1/4。SPP模块用于获得环境信息。我们将左右特征图结合成一个匹配代价卷，并把它送入一个3D CNN中进行调整，最后用回归的方法计算视差图。SPP模块，匹配代价卷，3D CNN和视差回归在下面的章节详述。
-</code></pre><h4 id="3-2-Spatial-Pyramid-Pooling-Module"><a href="#3-2-Spatial-Pyramid-Pooling-Module" class="headerlink" title="3.2 Spatial Pyramid Pooling Module"></a>3.2 Spatial Pyramid Pooling Module</h4><pre><code>单独从一个像素的强度（灰度或RGB值）很难判断环境关系。因此借助物体的环境信息来丰富图像特征能够有助于一致性估计，尤其对于不适定区域。在本文中，物体（例如汽车）和次级区域（车窗，轮胎等）的关系由SPP模块学习来结合多层级的环境信息。
-
-在何凯明的论文中，SPP被设计用来去除CNN中的尺寸约束。由SPP生成的不同级别的特征图被平整后送入全卷积层用于分类，在此之后SPP被用于语义分割问题。ParseNet使用全局平均池化来结合全局环境信息。PSPNet拓展了ParseNet，采用包含不同尺度和次级区域信息的分层全局池化。在PSPNet中，SPP模块使用自适应平均池化把特征压缩到四个尺度上，并紧跟一个1*1的卷积层来减少特征维度，之后低维度的特征图通过双线性插值的方法进行上采样以恢复到原始图片的尺寸。不同级别的特征图都结合成最终的SPP特征图。
-
-在本文中，我们为SPP设计了4个尺度的平均池化：64*64，32*32，16*16，8*8。并与PSPNet一样，采用了1*1卷积和上采样。在简化模型测试中（ablation study）,我们设计了大量的实验来展示不同级别的特征图的影响，在4.2章详述。
-</code></pre><h4 id="3-3-Cost-Volume"><a href="#3-3-Cost-Volume" class="headerlink" title="3.3 Cost Volume"></a>3.3 Cost Volume</h4><pre><code>与使用距离测定方法不同，MC-CNN和GC-Net方法都结合左右图特征使用深层网络来学习匹配代价的估计。跟随GC-Net的方法，我们通过结合左右图中每个视差值对应的特征图，采用SPP特征来构成一个四维的匹配代价卷（高*宽*视差*特征大小）。
-</code></pre><h4 id="3-4-3D-CNN"><a href="#3-4-3D-CNN" class="headerlink" title="3.4 3D CNN"></a>3.4 3D CNN</h4><pre><code>SPP模块通过结合不同级别的特征有助于立体匹配。为了在视差维度和空间维度上聚合特征信息，我们提出两种类型的3D CNN结构来调整匹配代价卷：基础结构和堆叠的沙漏结构。在基础结构中，网络由简单的残差块构成。基础结构包括12个3*3*3的卷积层。然后我们通过双线性插值的上采样将匹配代价卷的尺寸恢复到H*W*D。最终，我们利用回归的方式来计算尺寸为H*W的视差图，将在3.5节详述。
-
-为了得到更多的环境信息，我们使用一个沙漏（编码解码）结构，由多个重复的带有中间层监督的由精到粗再由粗到精的过程构成。这个堆叠的沙漏结构有三个主要的沙漏网络，每个都会生成一个视差图。这样三个沙漏结构就会由三个输出和三个损失。损失函数在3.6节详述。训练过程中，总的损失是由三个损失值的加权求和得到的。在测试过程中，最终的视差图是由三个输出中的最后一个得到的。在我们的简化模型测试中，我们用基础结构来测试SPP模块的表现，因为基础结构没由通过编码解码结构学习额外的环境信息。
-</code></pre><h4 id="3-5-Disparity-Regression"><a href="#3-5-Disparity-Regression" class="headerlink" title="3.5 Disparity Regression"></a>3.5 Disparity Regression</h4><pre><code> 我们使用视差回归的方式来估算连续的视差图。根据由softmax操作得到预测代价Cd来计算每一个视差值d的可能性。预测视差值d&apos;由每一个视差值*其对应的可能性求和得到，如下式:
-
-
-视差值回归比基于分类的立体匹配方法鲁棒性更强
-</code></pre>
       
     </div>
     
@@ -383,7 +382,7 @@ conv1_x,conv2_x,conv3_x,conv4_x是最特征基本的残差块用来学习提取�
         <p><span>本文标题:</span><a href="/2018/11/18/Network论文笔记/">Network论文笔记</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Virya-Hh</a></p>
         <p><span>发布时间:</span>2018-11-18, 11:01:53</p>
-        <p><span>最后更新:</span>2018-11-18, 15:31:22</p>
+        <p><span>最后更新:</span>2018-11-18, 15:46:38</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2018/11/18/Network论文笔记/" title="Network论文笔记">http://yoursite.com/2018/11/18/Network论文笔记/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2018/11/18/Network论文笔记/　　作者: Virya-Hh" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -397,6 +396,12 @@ conv1_x,conv2_x,conv3_x,conv4_x是最特征基本的残差块用来学习提取�
 
 
     <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2018/11/26/资源网址整理/">
+                    资源网址整理
+                </a>
+            </div>
         
         
             <div id="article-nav-older" class="article-nav-title">
@@ -413,7 +418,7 @@ conv1_x,conv2_x,conv3_x,conv4_x是最特征基本的残差块用来学习提取�
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Abstract"><span class="toc-number">1.</span> <span class="toc-text">Abstract</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Intruduction"><span class="toc-number">2.</span> <span class="toc-text">Intruduction</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Related-Work"><span class="toc-number">3.</span> <span class="toc-text">Related Work</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Pyramid-Stereo-Matching-Network"><span class="toc-number">4.</span> <span class="toc-text">Pyramid Stereo Matching Network</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-Network-Architecture"><span class="toc-number">4.1.</span> <span class="toc-text">3.1 Network Architecture</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-Spatial-Pyramid-Pooling-Module"><span class="toc-number">4.2.</span> <span class="toc-text">3.2 Spatial Pyramid Pooling Module</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-Cost-Volume"><span class="toc-number">4.3.</span> <span class="toc-text">3.3 Cost Volume</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-4-3D-CNN"><span class="toc-number">4.4.</span> <span class="toc-text">3.4 3D CNN</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-5-Disparity-Regression"><span class="toc-number">4.5.</span> <span class="toc-text">3.5 Disparity Regression</span></a></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Abstract"><span class="toc-number">1.</span> <span class="toc-text">Abstract</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Intruduction"><span class="toc-number">2.</span> <span class="toc-text">Intruduction</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Related-Work"><span class="toc-number">3.</span> <span class="toc-text">Related Work</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Pyramid-Stereo-Matching-Network"><span class="toc-number">4.</span> <span class="toc-text">Pyramid Stereo Matching Network</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-Network-Architecture"><span class="toc-number">4.1.</span> <span class="toc-text">3.1 Network Architecture</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-Spatial-Pyramid-Pooling-Module"><span class="toc-number">4.2.</span> <span class="toc-text">3.2 Spatial Pyramid Pooling Module</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-Cost-Volume"><span class="toc-number">4.3.</span> <span class="toc-text">3.3 Cost Volume</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-4-3D-CNN"><span class="toc-number">4.4.</span> <span class="toc-text">3.4 3D CNN</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-5-Disparity-Regression"><span class="toc-number">4.5.</span> <span class="toc-text">3.5 Disparity Regression</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-6-Loss"><span class="toc-number">4.6.</span> <span class="toc-text">3.6 Loss</span></a></li></ol></li></ol>
         
     </div>
     <style>
@@ -491,7 +496,9 @@ conv1_x,conv2_x,conv3_x,conv4_x是最特征基本的残差块用来学习提取�
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a href="/2018/11/26/资源网址整理/" title="上一篇: 资源网址整理">
+                <i class="fa fa-angle-left"></i>
+            </a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
@@ -503,7 +510,7 @@ conv1_x,conv2_x,conv3_x,conv4_x是最特征基本的残差块用来学习提取�
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/11/18/Network论文笔记/">Network论文笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/05/java基础课程实践回顾/">java基础课程实践回顾</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/05/Hive-编程指南学习/">Hive 编程指南学习</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/31/相机成像性能测试/">相机成像性能测试</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/18/ubuntu-16-04-配置caffe遇到的问题/">ubuntu 16.04 配置caffe遇到的问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/12/字符个数统计/">字符个数统计</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/12/提取不重复的数/">提取不重复的数</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/12/合并表记录/">合并表记录</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/12/取近似值/">取近似值</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/12/质数因子/">质数因子</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/11/进制转换/">进制转换</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/11/字符串分割/">字符串分割</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/10/明明的随机数/">明明的随机数</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/10/计算字符个数/">计算字符个数</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/10/字符串最后一个单词的长度/">字符串最后一个单词的长度</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/02/VS2013-配置OpenCV时，出现的问题/">VS2013 配置OpenCV时，出现的问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/13/Java底层基础容易遗忘知识点总结/">Java底层基础容易遗忘知识点总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/31/立体匹配算法总结及研究进展/">立体匹配算法总结及研究进展</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/30/Java中对于字符串的认识/">Java中对于字符串的认识</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/30/关于数据库E-R图及关系模式的认识/">关于数据库E-R图及关系模式的认识</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/28/初探middlebury公开数据集/">初探middlebury公开数据集</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/25/绑定域名出现的问题及解决/">绑定域名出现的问题及解决</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/24/软件测试了解及数据结构练习/">软件测试了解及数据结构练习</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/23/hexo主题配置-yelee/">hexo主题配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/22/MATLAB之GUI界面搭建学习/">MATLAB之GUI界面搭建学习</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/22/github-hexo-个人博客搭建教程（一）（含填坑）/">github+hexo 个人博客搭建教程（一）（含填坑）</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/11/26/论文返稿修改思路/">论文返稿修改思路</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/26/资源网址整理/">资源网址整理</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/18/Network论文笔记/">Network论文笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/05/java基础课程实践回顾/">java基础课程实践回顾</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/05/Hive-编程指南学习/">Hive 编程指南学习</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/31/相机成像性能测试/">相机成像性能测试</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/18/ubuntu-16-04-配置caffe遇到的问题/">ubuntu 16.04 配置caffe遇到的问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/12/字符个数统计/">字符个数统计</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/12/提取不重复的数/">提取不重复的数</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/12/合并表记录/">合并表记录</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/12/取近似值/">取近似值</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/12/质数因子/">质数因子</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/11/进制转换/">进制转换</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/11/字符串分割/">字符串分割</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/10/明明的随机数/">明明的随机数</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/10/计算字符个数/">计算字符个数</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/10/字符串最后一个单词的长度/">字符串最后一个单词的长度</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/02/VS2013-配置OpenCV时，出现的问题/">VS2013 配置OpenCV时，出现的问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/13/Java底层基础容易遗忘知识点总结/">Java底层基础容易遗忘知识点总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/31/立体匹配算法总结及研究进展/">立体匹配算法总结及研究进展</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/30/Java中对于字符串的认识/">Java中对于字符串的认识</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/30/关于数据库E-R图及关系模式的认识/">关于数据库E-R图及关系模式的认识</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/28/初探middlebury公开数据集/">初探middlebury公开数据集</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/25/绑定域名出现的问题及解决/">绑定域名出现的问题及解决</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/24/软件测试了解及数据结构练习/">软件测试了解及数据结构练习</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/23/hexo主题配置-yelee/">hexo主题配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/22/MATLAB之GUI界面搭建学习/">MATLAB之GUI界面搭建学习</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/22/github-hexo-个人博客搭建教程（一）（含填坑）/">github+hexo 个人博客搭建教程（一）（含填坑）</a></li></ul>
 
 
 
