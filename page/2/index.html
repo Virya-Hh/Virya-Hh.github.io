@@ -264,6 +264,72 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-合并表记录" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/09/12/合并表记录/" class="article-date">
+      <time datetime="2018-09-12T02:51:10.000Z" itemprop="datePublished">2018-09-12</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/12/合并表记录/">合并表记录</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>【不太熟练 】<br>题目描述<br>数据表记录包含表索引和数值，请对表索引相同的记录进行合并，即将相同索引的数值进行求和运算，输出按照key值升序进行输出。</p>
+<p>输入描述:<br>先输入键值对的个数<br>然后输入成对的index和value值，以空格隔开</p>
+<p>输出描述:<br>输出合并后的键值对（多行）<br></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/华为题库/">华为题库</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2018/09/12/合并表记录/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-取近似值" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -856,88 +922,6 @@
       
         <p class="article-more-link">
           <a href="/2018/06/13/Java底层基础容易遗忘知识点总结/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-立体匹配算法总结及研究进展" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2018/05/31/立体匹配算法总结及研究进展/" class="article-date">
-      <time datetime="2018-05-31T11:22:05.000Z" itemprop="datePublished">2018-05-31</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/31/立体匹配算法总结及研究进展/">立体匹配算法总结及研究进展</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p><a href="https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/Scharstein-IJCV02.pdf" target="_blank" rel="noopener">A Taxonomy and Evaluation of Dense Two-Frame Stereo<br>Correspondence Algorithms</a></p>
-<p><a href="https://wenku.baidu.com/view/5b359d7d5acfa1c7aa00cc7b.html" target="_blank" rel="noopener">双目立体匹配算法的研究与进展</a></p>
-<p><a href="https://blog.csdn.net/chuhang_zhqr/article/details/51179881" target="_blank" rel="noopener">几种典型的立体匹配算法</a></p>
-<p><a href="https://wenku.baidu.com/view/6032c3cc866fb84ae55c8d27.html" target="_blank" rel="noopener">立体匹配算法进展</a></p>
-<p>根据匹配算法使用的约束信息的不同，立体匹配算法总体上分为局域算法、全局算法及半全局匹配算法三种。</p>
-<h3 id="基于局部约束的算法"><a href="#基于局部约束的算法" class="headerlink" title="基于局部约束的算法"></a>基于局部约束的算法</h3><p>局域算法利用的是对应点本身以及邻近的局部区域的约束信息，局域算法的优点是效率高，但是它对局部的一些由于遮挡和纹理单一等造成的模糊比较敏感，易造成误匹配。</p>
-<pre><code>优点：涉及信息量较少，计算复杂度低，实时性高； 
-缺点：对噪声较敏感，对无纹理区域、视差不连续区域和遮挡区域匹配效果差； 
-</code></pre><p><strong>分类：</strong> </p>
-<ol>
-<li>区域匹配算法： </li>
-</ol>
-<p>区域匹配直接利用图像的灰度信息，主要用于表面光滑以及具有明显纹理特征的图像，使用区域匹配可以直接获得稠密的深度图，但是对于缺乏纹理和深度不连续的情况，适应性较差，且这种方法的计算量很大，匹配精度较差。</p>
-<p><a href="https://blog.csdn.net/hujingshuang/article/details/47759579" target="_blank" rel="noopener">图像配准 基于灰度的模板匹配算法（一）：MAD、SAD、SSD、MSD、NCC、SSDA、SATD算法</a></p>
-<p>基于灰度的图像匹配方法研究</p>
-<ol start="2">
-<li>特征匹配算法：</li>
-</ol>
-<p>特征匹配基于图像的几何特征，如边缘、轮廓、拐点、线段等对图像进行匹配，由于几何特征的稀疏性和不连续性，因此特征匹配只能得到稀疏的深度图，需要通过内插方法才能得到稠密的深度图，特征匹配以几何特征为基元，不易受光线的影响，因此鲁棒性较好，而且计算量小，速度快。<br></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习心得/">学习心得</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2018/05/31/立体匹配算法总结及研究进展/#more">阅读全文 >></a>
         </p>
       
       <div class="clearfix"></div>
